@@ -1,7 +1,8 @@
+import axios from 'axios';
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
-
+// Not exported until Component can be used. 
 const CardCreator = () => { 
 
     const { push } = useHistory()
@@ -22,6 +23,13 @@ const handleChange = (event) => {
 
 const handleSubmit = (event) => {
 event.preventDefault()
+// axios.post('', null) Commenting out until endpoint is created for article database. 
+// .then(res =>{
+// console.log("Successful Article Post: ",res)
+// })
+// .catch(err =>{
+// console.log("Article Post went wrong: ", err)
+// })
 push('/')
 }
     return(

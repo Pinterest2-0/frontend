@@ -10,7 +10,8 @@ const {first_name, last_name, email, avatar} = props.article
                     <p>{first_name}</p>
                     <p>{last_name}</p>
                     <p>{email}</p>
-                    
+                    <button>Edit</button>
+                    <button>Archive</button>
         </div>
     )
 }

@@ -5,6 +5,7 @@ import axios from 'axios'
 
 const Dashboard = () => { 
 // Dashboard will display current saved articles and give the user the ability to create, delete, and update current articles. 
+// Maybe Archiving an article would be better than deleting? Never truly delete, but archive. This would be a separate route and a page of Archived articles. 
 
 const articleStore = []
 
@@ -18,9 +19,11 @@ useEffect(() => {
     .catch(err => {console.log(err)})
 },[])
 
+
     return(
         <div>
             <h1>Dashboard Test</h1>
+
             <section class="CardDashboard">
 
             
