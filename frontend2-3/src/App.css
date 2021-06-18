@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.CardDashboard{
+display:flex; 
+}
+.CardContainer{ 
+  margin: 2rem; 
+}

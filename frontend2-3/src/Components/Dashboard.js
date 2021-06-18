@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import ArticleCard from './ArticleCard'; 
 import axios from 'axios'
 
 
@@ -11,7 +12,7 @@ const [articles, setArticles] = useState(articleStore)
 
 useEffect(() => { 
     axios.get('https://reqres.in/api/users')
-    .then(res => {console.log('Success/Data:',res.data.data)
+    .then(res => {
     setArticles(res.data.data)
 })
     .catch(err => {console.log(err)})
@@ -20,17 +21,15 @@ useEffect(() => {
     return(
         <div>
             <h1>Dashboard Test</h1>
+            <section class="CardDashboard">
+
+            
             {articles.map((article) => {
-                return (
-                <div>
-                    <p>{article.id}</p>
-                    <p>{article.first_name}</p>
-                    <p>{article.last_name}</p>
-                    <p>{article.email}</p>
-                    <p>{article.avatar}</p>
-                </div>
+                return(
+                <ArticleCard article={article} key={article.id}/>
                 )
             })}
+            </section>
         </div>
     )
 
