@@ -1,7 +1,6 @@
 import React from 'react'; 
 
 const ArticleCard = (props) => {
-console.log("props:ArticleCard: ", props)
 const {first_name, last_name, email, avatar} = props.article
     return(
         <div className="CardContainer">
