@@ -13,6 +13,41 @@
   }
 }
 
+/* cat image*/
+.App img{padding-top: 15px
+}
+
+
+.NAVBAR {
+  background-color: #40826D;
+  display:flex;
+  padding-top:5px;
+padding-bottom: 10px;
+
+}
+
+.NAVBAR a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: underline;
+  font-size: 1.5rem;
+}
+
+.NAVBAR input[type=text] {
+  float: right;
+  padding: 2px;
+  border: none;
+  margin-top: 22px;
+  margin-right: 12px;
+  font-size: 1rem;
+  height: 30px;
+  width: 210px;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
