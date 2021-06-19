@@ -1,4 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const initialSignUpForm = {
+    firstname: '',
+    lastname: '',
+    username: '',
+    password: '',
+    passwordconfirm: '',
+    terms: false,
+}
 
 export default function SignUpForm() {
     return (
