@@ -21,8 +21,20 @@ function App() {
       <GlobalStyles/>
     <div className="App">
     <Toggle theme={theme} toggleTheme={themeToggler} />
+    <div className= 'NAVBAR'>
+
+<a class="active" href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+
+<input type="text" placeholder="Search.."/>   
+</div>
+
+<img src='https://kittentoob.com/wp-content/uploads/2016/10/Scottish-Fold-1.jpg' alt=''/>
+<br/>
       <h1>Parent Component</h1>
       <h3>Welcome to article efficiency</h3>
+      
       <Link to='/userdashboard'>Access Test Userdashboard</Link>
       <Switch>
         <Route exact path='/userdashboard'>
@@ -33,7 +45,7 @@ function App() {
 
 </>
 </ThemeProvider>
-  );
+  )
 }
 
 export default App;
