@@ -9,7 +9,7 @@ export default function Home() {
             <CategoryList />
             <hr />
         
-            <div>
+            <div className='feed-container'>
                 <Feed />
             </div>
         </div>
