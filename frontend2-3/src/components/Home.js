@@ -8,9 +8,10 @@ export default function Home() {
             <h2>Sort by Category</h2>
             <CategoryList />
             <hr />
-        </div>
-        <div>
-            <Feed />
+        
+            <div>
+                <Feed />
+            </div>
         </div>
     )
 }
