@@ -1,14 +1,15 @@
 import React from 'react'; 
 
 const ArticleCard = (props) => {
-const {first_name, last_name, email, avatar} = props.article
+const {title, category, link, description} = props.article
     return(
         <div className="CardContainer">
             
-            <img src={avatar} alt="" />
-                    <p>{first_name}</p>
-                    <p>{last_name}</p>
-                    <p>{email}</p>
+            {/* <img src={avatar} alt="" /> */}
+                    <p>{title}</p>
+                    <p>{category}</p>
+                    <a href={link}>Read More</a>
+                    <p>{description}</p>
                     <button>Edit</button>
                     <button>Archive</button>
         </div>
