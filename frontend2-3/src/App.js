@@ -1,3 +1,7 @@
+import React from 'react';
+import LoginForm from './components/LoginForm';
+import SignUpForm from './components/SignUpForm';
+
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./Components/GlobalStyles";
 import { lightTheme, darkTheme } from "./Components/Themes"
@@ -20,27 +24,41 @@ function App() {
       <>
       <GlobalStyles/>
     <div className="App">
-    <Toggle theme={theme} toggleTheme={themeToggler} />
-    <div className= 'NAVBAR'>
+      <Toggle theme={theme} toggleTheme={themeToggler} />
+      <nav>
+        <h1>PinteReach</h1>
+          {/*JULIAN */}  
+          {/*Search Bar */}    
+          <input type="text" placeholder="Search.."/>
+          {/*Links */} 
+          <a class="active" href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
 
-<a class="active" href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-
-<input type="text" placeholder="Search.."/>   
-</div>
-
-<img src='https://kittentoob.com/wp-content/uploads/2016/10/Scottish-Fold-1.jpg' alt=''/>
-<br/>
-      <h1>Parent Component</h1>
-      <h3>Welcome to article efficiency</h3>
+          {/*STEPH */}
+          <Link to='/login'>Log In</Link>
+          <Link to='/signup'>Sign Up</Link>   
+      </nav>
       
       <Link to='/userdashboard'>Access Test Userdashboard</Link>
-      <Switch>
+
+    <Switch>
+      <Route path='/login'>
+        <LoginForm />
+      </Route>
+
+      <Route path='/signup'>
+        <SignUpForm />
+      </Route>
+
         <Route exact path='/userdashboard'>
           <Dashboard/>
         </Route>
-      </Switch>
+    </Switch>
+    
+
+      <img src='https://kittentoob.com/wp-content/uploads/2016/10/Scottish-Fold-1.jpg' alt=''/>
+      <br/>
     </div>
 
 </>
