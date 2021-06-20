@@ -72,9 +72,22 @@ padding-bottom: 10px;
   }
 }
 
+.Dashboard{
+background-image:linear-gradient(to right, silver, slategrey) 
+}
 .CardDashboard{
 display:flex; 
 }
+a {
+  color: black;  
+}
+button:hover{ 
+  background-color: deepskyblue; 
+}
 .CardContainer{ 
   margin: 2rem; 
+}
+#dashboardTitle{ 
+  text-align: left; 
+  margin-bottom: 0; 
 }

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ArticleCard from './ArticleCard'; 
 import axios from 'axios'
+import styled from 'styled-components';
+
 
 
 const Dashboard = () => { 
@@ -10,19 +12,22 @@ const Dashboard = () => {
 const articleStore = []
 
 const [articles, setArticles] = useState(articleStore)
-
+// 'https://reqres.in/api/users'
 useEffect(() => { 
-    axios.get('https://reqres.in/api/users')
+    axios.get('https://pintereachunit4.herokuapp.com/api/articles')
     .then(res => {
-    setArticles(res.data.data)
+    // setArticles(res.data.data)
+    setArticles(res.data)
 })
     .catch(err => {console.log(err)})
 },[])
 
 
     return(
-        <div>
-            <h1>Dashboard Test</h1>
+        <div class="Dashboard" >
+            <h1 id='dashboardTitle'>My Articles</h1>
+
+            <hr />
 
             <section class="CardDashboard">
 
