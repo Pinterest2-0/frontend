@@ -3,13 +3,13 @@ import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 
 import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./Components/GlobalStyles";
-import { lightTheme, darkTheme } from "./Components/Themes"
+import { GlobalStyles } from "./components/GlobalStyles";
+import { lightTheme, darkTheme } from "./components/Themes"
 import  {useDarkMode} from "./Hooks/useDarkMode";
-import Toggle from './Components/Toggler'; 
+import Toggle from './components/Toggler'; 
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
-import Dashboard from './Components/Dashboard'; 
+import Dashboard from './components/Dashboard'; 
 
 
 function App() {

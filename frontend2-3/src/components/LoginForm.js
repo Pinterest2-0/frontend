@@ -12,7 +12,7 @@ export default function LoginForm() {
     const [ login, setLogin ] = useState(initialLoginForm)
     
     // ONCHANGE HANDLER
-    const changes = (name, value) = {
+    const changes = (name, value) => {
         setLogin({...login, [name]: value})
     }
 
