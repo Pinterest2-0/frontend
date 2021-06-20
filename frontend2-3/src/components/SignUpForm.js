@@ -10,43 +10,54 @@ const initialSignUpForm = {
 }
 
 export default function SignUpForm() {
+    // STATE
+    const [ signUp, setSignUp ] = useState(initialSignUpForm)
+    const [disabled, setDisabled] = useState(true)
+    
+    // ONCHANGE HANDLER
+    const changes = (event) => {
+        const { checked, value, name, type } = event.target;
+        const valueToUse = type === 'checkbox' ? checked : value;
+        setSignUp({...signUp, [name]: valueToUse})
+    }
+
     return (
         <form>
         <h2>Register</h2>
         <p>Create your account! It is free for the first month!</p>
 
         <label>
-            <input name='firstname' type='text' placeholder='First Name'/>
+            <input name='firstname' type='text' value={signUp.firstname} placeholder='First Name' onChange={changes}/>
         </label>
         <br/>
 
         <label>
-            <input name='lastname' type='text' placeholder='Last Name'/>
+            <input name='lastname' type='text' value={signUp.lastname} placeholder='Last Name' onChange={changes}/>
         </label>
         <br/>
 
         <label>
-            <input name='username' type='text' placeholder='Choose a username'/>
+            <input name='username' type='text' value={signUp.username} placeholder='Choose a username' onChange={changes}/>
         </label>
         <br/>
 
         <label>
-            <input name='password' type='text' placeholder='Create your password'/>
+            <input name='password' type='text' value={signUp.password} placeholder='Create your password' onChange={changes}/>
         </label>
         <br/>
 
         <label>
-            <input name='passwordconfirm' type='text' placeholder='Confirm your password'/>
+            <input name='passwordconfirm' type='text' value={signUp.passwordconfirm} placeholder='Confirm your password' onChange={changes}/>
         </label>
         <br/>
 
         <label>
             I accept the Terms of Use and Privacy Policy.
-            <input name='terms' type='checkbox'/>
+            <input name='terms' type='checkbox' onChange={changes}/>
         </label>
         <br/>
 
-        <button>Register!</button>
+        <button type='submit' disabled={disabled} >Register!</button>
         
     </form>
     )
