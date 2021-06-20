@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import * as yup from 'yup';
+import {logInSchema} from '../schema_validation/loginSchema';
 
 // OBJECT INITIAL FORM
 const initialLoginForm = {
