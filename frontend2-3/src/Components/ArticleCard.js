@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import {MdEdit} from 'react-icons/md';
 import {RiArchiveDrawerLine} from 'react-icons/ri';
 import {TiDelete} from 'react-icons/ti';
+import { Divider } from 'antd';
+
+
 const Button = styled.button`
 background: ${props => props.primary ? "skyblue" : "white"};
 
@@ -15,8 +18,8 @@ border-radius: 3px;
 `
 
 const Card = styled.div`
-border-left: 2px solid deepskyblue; 
 margin: 0 auto; 
+box-shadow: 10px 20px: 
 }
 `
 // const Div = styled.div`
@@ -35,9 +38,12 @@ const {title, category, link, description} = props.article
                     <p>Category: {category}</p>
                     <a href={link}>Read More</a>
                     <p>Summary: {description}</p>
+                    <div>
                     <Button className="primarybtn"primary><MdEdit/> Edit</Button>
                     <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
                     <Button className="primarybtn" primary><TiDelete/>Delete</Button>
+                    </div>
+                    <hr />
                     {/* <img src={avatar} alt='profile pic'></img>
                     <p>{first_name}</p>
                     <a href={last_name}>Read More</a>

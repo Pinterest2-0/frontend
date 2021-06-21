@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from './Components/LoginForm';
 import SignUpForm from './Components/SignUpForm';
-
+import Home from './Components/Home'; 
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./Components/GlobalStyles";
 import { lightTheme, darkTheme } from "./Components/Themes"
@@ -31,7 +31,7 @@ function App() {
           {/*Search Bar */}    
           <input type="text" placeholder="Search.."/>
           {/*Links */} 
-          <a class="active" href="/home">Home</a>
+          <a class="active" href="/">Home</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
 
@@ -48,8 +48,9 @@ function App() {
       <Route exact path='/login'>
         <LoginForm />
       </Route>
-
+        
       <Route exact path='/userdashboard' component={Dashboard}/>
+      < Route exact path='/' component={Home}/>
 
       <Route exact path='/signup'>
         <SignUpForm />

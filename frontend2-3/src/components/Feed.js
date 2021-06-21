@@ -10,7 +10,7 @@ export default function Feed() {
     useEffect(() => { 
         axios.get('https://pintereachunit4.herokuapp.com/api/articles')
         .then(res => {
-        setFeedArticles(res.data.data)
+        setFeedArticles(res.data)
     })
         .catch(err => {console.log(err)})
     },[])
