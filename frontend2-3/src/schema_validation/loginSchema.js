@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const logInSchema = yup.object().shape({
+const loginSchema = yup.object().shape({
     username: yup
     .string()
     .required()
@@ -9,6 +9,10 @@ const logInSchema = yup.object().shape({
     password: yup
     .string()
     .required("Password is required to login to your account")
+    .matches(
+        /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+        "Password must contain at least 8 characters, one uppercase, one number and one special case character"
+    ),
 })
 
-export default logInSchema
+export default loginSchema

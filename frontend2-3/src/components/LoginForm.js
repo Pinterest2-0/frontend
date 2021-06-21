@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
-import {logInSchema} from '../schema_validation/loginSchema';
+import loginSchema from '../schema_validation/loginSchema';
 
-// OBJECT INITIAL FORM
+// LOGIN INITIAL FORM
 const initialLoginForm = {
-    usename: '',
+    username: '',
+    password: '',
+}
+
+// LOGIN FORM ERRORS
+const loginFormErrors = {
+    username: '',
     password: '',
 }
 
@@ -12,10 +18,25 @@ const initialLoginForm = {
 export default function LoginForm() {
     // STATE
     const [ login, setLogin ] = useState(initialLoginForm)
+    const [ loginErrors, setLoginErrors ] = useState(loginFormErrors)
+    
+    // REACH FOR ERROR MESSAGES
+    const getLoginErrors = (name, value) => {
+        yup.reach(loginSchema, name)
+        .validate(value)
+        .then(() => {
+            setLoginErrors({...loginErrors, [name]: value})
+        })
+        .catch((error) => {
+            setLoginErrors({...loginErrors, [name]: error.message})
+        })
+    }
     
     // ONCHANGE HANDLER
-    const changes = (name, value) => {
+    const changes = (event) => {
+        const { value, name } = event.target;
         setLogin({...login, [name]: value})
+        getLoginErrors(name, value)
     }
 
     // SUBMIT HANDLER
@@ -24,12 +45,17 @@ export default function LoginForm() {
     }
 
     return (
-        <form>
+        <form onSubmit={submit}>
             <h2> Member Log In</h2>
+
+            <div className='loginErrors'>
+                <div>{loginErrors.username}</div>
+                <div>{loginErrors.password}</div>
+            </div>
 
             <label>
                 Username
-                <input name='username' type='text' value={login.usename} onChange={changes} />
+                <input name='username' type='text' value={login.username} onChange={changes} />
             </label>
             <br/>
 
