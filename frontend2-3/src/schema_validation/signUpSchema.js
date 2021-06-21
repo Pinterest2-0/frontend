@@ -31,6 +31,7 @@ const signUpSchema = yup.object().shape({
         }),
     terms: yup
         .boolean()
+        .oneOf([true], "You must sign your life away to register for Pintereach")
 });
 
 export default signUpSchema
