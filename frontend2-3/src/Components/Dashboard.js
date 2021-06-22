@@ -27,8 +27,6 @@ useEffect(() => {
         <div class="Dashboard" >
             <h1 id='dashboardTitle'>My Articles</h1>
 
-            <hr />
-
             <section class="CardDashboard">
 
             

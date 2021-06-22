@@ -7,5 +7,6 @@ export const axiosWithAuth =() => {
         headers: {
             Authorization: token,
         },
+        baseURL:'https://pintereachunit4.herokuapp.com/api'
     });
 };

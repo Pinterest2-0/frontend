@@ -72,12 +72,7 @@ padding-bottom: 10px;
   }
 }
 
-.Dashboard{
-background: rgba(255, 245, 238, .6); 
-}
-/* .CardDashboard{
-display:flex; 
-} */
+
 a {
   color: black;  
 }
@@ -85,13 +80,18 @@ button:hover{
   background-color: deepskyblue; 
 }
 .CardContainer{ 
-  margin: 2rem; 
+  margin-top: 0; 
+  border-bottom: 1px solid black; 
 }
 .CardContainer:hover{ 
-  box-shadow: 5px 10px #888888;
+background-color: skyblue;
 }
 
 #dashboardTitle{ 
   text-align: left; 
+  border-bottom: 1px solid black; 
   margin-bottom: 0; 
+}
+.title{ 
+  margin-top: 0; 
 }

@@ -19,9 +19,11 @@ border-radius: 3px;
 
 const Card = styled.div`
 margin: 0 auto; 
-box-shadow: 10px 20px: 
+
 }
 `
+
+//Archive prototype <a href="mailto:john@demosite.com?subject=Test%20email&cc=test@gmail.com&body=This is my body text">Send feedback</a>
 // const Div = styled.div`
 // background: ${props => props.primary ? ""}
 // `
@@ -34,7 +36,7 @@ const {title, category, link, description} = props.article
         <Card className="CardContainer">
             
             {/* <img src={avatar} alt="" /> */}
-                    <p>Title: {title}</p>
+                    <p className='title'>Title: {title}</p>
                     <p>Category: {category}</p>
                     <a href={link}>Read More</a>
                     <p>Summary: {description}</p>
@@ -43,7 +45,7 @@ const {title, category, link, description} = props.article
                     <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
                     <Button className="primarybtn" primary><TiDelete/>Delete</Button>
                     </div>
-                    <hr />
+                    {/* <hr /> */}
                     {/* <img src={avatar} alt='profile pic'></img>
                     <p>{first_name}</p>
                     <a href={last_name}>Read More</a>
