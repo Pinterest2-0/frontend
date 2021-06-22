@@ -33,12 +33,8 @@ export default function LoginForm() {
     }
     
     // ONCHANGE HANDLER
-<<<<<<< HEAD
-    const changes = (name, value) => {
-=======
     const changes = (event) => {
         const { value, name } = event.target;
->>>>>>> a4b97ebee6da61cbbcfd40b59bdf2fba062de168
         setLogin({...login, [name]: value})
         getLoginErrors(name, value)
     }
