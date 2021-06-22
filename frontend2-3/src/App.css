@@ -95,3 +95,6 @@ background-color: skyblue;
 .title{ 
   margin-top: 0; 
 }
+.Modal{ 
+  z-index: 1000; 
+}

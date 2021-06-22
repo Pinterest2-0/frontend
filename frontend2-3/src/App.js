@@ -10,6 +10,7 @@ import Toggle from './Components/Toggler';
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
+import UpdateModal from './Components/UpdateModal';
 
 
 function App() {
@@ -56,7 +57,9 @@ function App() {
         <SignUpForm />
       </Route>
 
-       
+       <Route exact path='/update' component={UpdateModal}>
+
+       </Route>
     </Switch>
     
 
