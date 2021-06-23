@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import loginSchema from '../schema_validation/loginSchema';
+import axios from 'axios';
 
 // LOGIN INITIAL FORM
 const initialLoginForm = {
@@ -19,13 +20,29 @@ export default function LoginForm() {
     // STATE
     const [ login, setLogin ] = useState(initialLoginForm)
     const [ loginErrors, setLoginErrors ] = useState(loginFormErrors)
+    const [ currentMember, setCurrentMember] = useState([])
+
+        // POST CURRENT MEMEBERS
+        const postCurrentMember = member => {
+            axios
+            .post('https://pintereachunit4.herokuapp.com/api/auth/login', member)
+            .then(response => {
+                setCurrentMember([...currentMember, member]);
+            })
+            .catch(error => {
+                console.log('Error posting data: ', error)
+            })
+            .finally(() => {
+                setLogin(initialLoginForm)
+            })
+        }
     
     // REACH FOR ERROR MESSAGES
     const getLoginErrors = (name, value) => {
         yup.reach(loginSchema, name)
         .validate(value)
         .then(() => {
-            setLoginErrors({...loginErrors, [name]: value})
+            setLoginErrors({...loginErrors, [name]: ''})
         })
         .catch((error) => {
             setLoginErrors({...loginErrors, [name]: error.message})
@@ -42,6 +59,11 @@ export default function LoginForm() {
     // SUBMIT HANDLER
     const submit = event => {
         event.preventDefault()
+        const curMem = {
+            username: login.username,
+            password: login.password,
+        }
+        postCurrentMember(curMem)
     }
 
     return (
@@ -61,7 +83,7 @@ export default function LoginForm() {
 
             <label>
                 Password
-                <input name='password' type='text'value={login.password} onChange={changes} />
+                <input name='password' type='password' value={login.password} onChange={changes} />
             </label>
             <br/>
 
