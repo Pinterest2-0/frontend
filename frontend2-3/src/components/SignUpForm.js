@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import signUpSchema from '../schema_validation/signUpSchema';
+import axios from 'axios';
 
 const initialSignUpForm = {
     firstname: '',
@@ -25,6 +26,7 @@ export default function SignUpForm() {
     // STATE
     const [ signUp, setSignUp ] = useState(initialSignUpForm)
     const [ signUpErrors, setSignUpErrors ] = useState(signUpFormErrors)
+    const [ newMember, setNewMember ] = useState([])
     const [ disabled, setDisabled ] = useState(true)
 
     // REACH FOR ERROR MESSAGES
@@ -32,10 +34,25 @@ export default function SignUpForm() {
         yup.reach(signUpSchema, name)
         .validate(value)
         .then(() => {
-            setSignUpErrors({...signUpErrors, [name]: value})
+            setSignUpErrors({...signUpErrors, [name]: ''})
         })
         .catch((error) => {
-            setSignUpErrors({...signUpErrors, [name]: error.message})
+            setSignUpErrors({...signUpErrors, [name]: error.errors[0]})
+        })
+    }
+
+    // POST NEW MEMEBERS
+    const postNewMember = member => {
+        axios
+        .post('https://pintereachunit4.herokuapp.com/api/auth/register', member)
+        .then(response => {
+            setNewMember([...newMember, member]);
+        })
+        .catch(error => {
+            console.log('Error posting data: ', error)
+        })
+        .finally(() => {
+            setSignUp(initialSignUpForm)
         })
     }
     
@@ -50,6 +67,15 @@ export default function SignUpForm() {
     // SUBMIT HANDLER
     const submit = event => {
         event.preventDefault()
+        const newMem = {
+            firstname: signUp.firstname,
+            lastname: signUp.lastname,
+            username: signUp.username,
+            password: signUp.password,
+            passwordconfirm: signUp.passwordconfirm,
+            terms: signUp.terms,
+        }
+        postNewMember(newMem)
     }
 
     //SIDE EFFECTS
