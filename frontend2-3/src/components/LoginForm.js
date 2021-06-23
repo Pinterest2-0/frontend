@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as yup from 'yup';
 import loginSchema from '../schema_validation/loginSchema';
 import axios from 'axios';

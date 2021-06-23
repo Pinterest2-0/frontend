@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useParams, useHistory} from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 import {Button} from './ArticleCard';
 import {VscSave} from 'react-icons/vsc';
 import styled from 'styled-components';
