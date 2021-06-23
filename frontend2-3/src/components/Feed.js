@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios'; 
+import ArticleCard from './ArticleCard'; 
 
 export default function Feed() {
     const feedArticleStore = []
@@ -8,7 +10,7 @@ export default function Feed() {
     useEffect(() => { 
         axios.get('https://pintereachunit4.herokuapp.com/api/articles')
         .then(res => {
-        setFeedArticles(res.data.data)
+        setFeedArticles(res.data)
     })
         .catch(err => {console.log(err)})
     },[])

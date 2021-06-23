@@ -72,9 +72,29 @@ padding-bottom: 10px;
   }
 }
 
-.CardDashboard{
-display:flex; 
+
+a {
+  color: black;  
+}
+button:hover{ 
+  background-color: deepskyblue; 
 }
 .CardContainer{ 
-  margin: 2rem; 
+  margin-top: 0; 
+  border-bottom: 1px solid black; 
+}
+.CardContainer:hover{ 
+background-color: skyblue;
+}
+
+#dashboardTitle{ 
+  text-align: left; 
+  border-bottom: 1px solid black; 
+  margin-bottom: 0; 
+}
+.title{ 
+  margin-top: 0; 
+}
+.Modal{ 
+  z-index: 1000; 
 }
