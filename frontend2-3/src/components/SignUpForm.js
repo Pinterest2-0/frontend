@@ -47,6 +47,7 @@ export default function SignUpForm() {
         .post('https://pintereachunit4.herokuapp.com/api/auth/register', member)
         .then(response => {
             setNewMember([...newMember, member]);
+            console.log(response)
         })
         .catch(error => {
             console.log('Error posting data: ', error)
@@ -72,8 +73,6 @@ export default function SignUpForm() {
             lastname: signUp.lastname,
             username: signUp.username,
             password: signUp.password,
-            passwordconfirm: signUp.passwordconfirm,
-            terms: signUp.terms,
         }
         postNewMember(newMem)
     }

@@ -3,13 +3,14 @@ import LoginForm from './Components/LoginForm';
 import SignUpForm from './Components/SignUpForm';
 import Home from './Components/Home'; 
 import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./components/GlobalStyles";
-import { lightTheme, darkTheme } from "./components/Themes"
+import { GlobalStyles } from "./Components/GlobalStyles";
+import { lightTheme, darkTheme } from "./Components/Themes"
 import  {useDarkMode} from "./Hooks/useDarkMode";
-import Toggle from './components/Toggler'; 
+import Toggle from './Components/Toggler'; 
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
-import Dashboard from './components/Dashboard'; 
+import Dashboard from './Components/Dashboard'; 
+import UpdateModal from './Components/UpdateModal'; 
 
 
 function App() {
@@ -49,14 +50,14 @@ function App() {
         <LoginForm />
       </Route>
         
-      <Route exact path='/userdashboard' component={Dashboard}/>
+      <Route path='/userdashboard' component={Dashboard}/>
       < Route exact path='/' component={Home}/>
 
-      <Route exact path='/signup'>
+      <Route path='/signup'>
         <SignUpForm />
       </Route>
 
-       <Route exact path='/update' component={UpdateModal}>
+       <Route path='/update' component={UpdateModal}>
 
        </Route>
     </Switch>

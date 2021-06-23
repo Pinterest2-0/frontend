@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import loginSchema from '../schema_validation/loginSchema';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 // LOGIN INITIAL FORM
 const initialLoginForm = {
@@ -21,13 +22,18 @@ export default function LoginForm() {
     const [ login, setLogin ] = useState(initialLoginForm)
     const [ loginErrors, setLoginErrors ] = useState(loginFormErrors)
     const [ currentMember, setCurrentMember] = useState([])
-
+    const history = useHistory();
         // POST CURRENT MEMEBERS
         const postCurrentMember = member => {
             axios
             .post('https://pintereachunit4.herokuapp.com/api/auth/login', member)
             .then(response => {
                 setCurrentMember([...currentMember, member]);
+                console.log(response)
+                localStorage.setItem('token' , response.data.token)
+                localStorage.setItem('token' , response.data.user_id)
+                history.push(`/userdashboard/${currentMember.username}`)
+
             })
             .catch(error => {
                 console.log('Error posting data: ', error)
