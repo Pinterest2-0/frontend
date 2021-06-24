@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const landingPage = () => {
     const Button = styled.button`
-  background-color: #3f51b5;
+  background-color: #40826D;
   color: white;
   padding: 5px 15px;
   border-radius: 5px;
@@ -15,7 +15,7 @@ const landingPage = () => {
   box-shadow: 0px 2px 2px lightgray;
   transition: ease background-color 250ms;
   &:hover {
-    background-color: #283593;
+    background-color: #2b5749;
   }
   &:disabled {
     cursor: default;
@@ -25,6 +25,7 @@ const landingPage = () => {
 
 const ButtonGroup = styled.div`
   display: flex;
+  justify-content: center;
 `
     const TextDiv = styled.div`
         margin-top: 100px;
@@ -39,15 +40,16 @@ const ButtonGroup = styled.div`
                 <p className='text'>
                     Pintereach is research made easy. Save and organize your articles, categorize by topic, custom-rank the items in your archive. The research solution you've been waiting for has arrived.
                 </p>
+            
+                <ButtonGroup>
+                    <Link to='/signup'>
+                        <Button>Signup</Button>
+                    </Link>
+                    <Link to='/login'>
+                        <Button>Login</Button>
+                    </Link>
+                </ButtonGroup>
             </TextDiv>
-            <ButtonGroup>
-                <Link to='/signup'>
-                    <Button>Signup</Button>
-                </Link>
-                <Link to='/login'>
-                    <Button>Login</Button>
-                </Link>
-            </ButtonGroup>
         </div>
     )
 }

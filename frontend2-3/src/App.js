@@ -12,6 +12,7 @@ import './App.css';
 import Dashboard from './Components/Dashboard'; 
 import UpdateModal from './Components/UpdateModal';
 import LandingPage from './Components/LandingPage';
+import Contact from './Components/Contact';
 
 function App() {
   
@@ -55,6 +56,9 @@ function App() {
 
       <Route exact path='/signup'>
         <SignUpForm />
+      </Route>
+
+      <Route exact path='/contact' component={Contact}>
       </Route>
 
        <Route exact path='/update' component={UpdateModal}>
