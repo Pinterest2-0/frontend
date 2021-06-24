@@ -15,6 +15,7 @@ import Toggle from './Components/Toggler';
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
+import Contact from './Components/Contact';
 
 function App() {
   
@@ -47,13 +48,18 @@ function App() {
       </nav>
       <br/>
 
-      <Link className='dashLink' to='/userdashboard'>Access Test Userdashboard</Link>
+      <Link className='dashLink' to='/userdashboard'> Access Your Dashboard</Link>
 
     <Switch>
       <Route path='/about'>
         <About />
       </Route>
       
+<Route path='/contact'>
+  <Contact/>
+</Route>
+
+
       <Route exact path='/login'>
         <LoginForm />
       </Route>
