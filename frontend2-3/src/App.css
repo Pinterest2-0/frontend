@@ -98,3 +98,146 @@ background-color: skyblue;
 .Modal{ 
   z-index: 1000; 
 }
+
+
+/* Styles for ANY COMPONENT WITH THIS CLASS*/
+.vl {
+  border-left: 2px solid #40826D;
+  height: auto;
+  left: 50%;
+  margin-left: -3px;
+  margin-right: 5%;
+  top: 0;
+}
+
+/* Styles for Login Component */
+.loginComponent{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.loginImage{
+  width: 50%
+}
+
+.loginImage img{
+  width: 90%
+}
+
+.loginForm{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin-left: 20%;
+}
+
+.loginForm h1{
+text-align: center;
+font-size: 8vh;
+background-color: #40826D;
+}
+
+.loginForm h2{
+  text-align: center;
+  font-size: 5vh;
+}
+
+.loginForm button{
+  width: 30%;
+  align-self: center;
+  font-size: 3vh;
+  }
+
+.loginForm input{
+  width: 40%;
+  align-self: center;
+  font-size: 3vh;
+}
+
+.loginForm label{
+  text-align: center;
+  font-size: 3vh;
+}
+
+.loginErrors{
+  color:firebrick;
+  font-style: italic;
+}
+
+
+/* Styles for About Component */
+.aboutContainer{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.aboutImageContainer{
+  width: 50%;
+}
+
+.aboutImageContainer img{
+  height: 90vh;
+  margin-top: 8%;
+}
+
+.aboutContent{
+  width: 45%;
+  text-align: left;
+}
+
+.aboutContainer h1{
+  font-size: 5em;
+  text-align: center;
+  background-color: #40826D;
+}
+
+/* Styles for Sign Up Component*/
+
+.signUpFormContainer{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.signUpImage{
+  width: 50%
+}
+
+.signUpImage img{
+  width: 90%;
+  height: 90vh
+}
+
+.signUpForm{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 45%;
+}
+
+.signUpForm h1{
+  text-align: center;
+  font-size: 8vh;
+  background-color: #40826D;
+}
+
+.signUpForm button{
+  width: 30%;
+  align-self: center;
+  font-size: 3vh;
+  }
+
+.signUpForm input{
+  width: 50%;
+  align-self: center;
+  font-size: 3vh;
+  margin: 1%;
+}
+
+.signUpForm label{
+  text-align: center;
+  font-size: 3vh;
+}
+
+.signUpErrors{
+  color:firebrick;
+  font-style: italic;
+}

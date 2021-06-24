@@ -1,7 +1,8 @@
 import React from 'react';
 import LoginForm from './Components/LoginForm';
 import SignUpForm from './Components/SignUpForm';
-import Home from './Components/Home'; 
+import Home from './Components/Home';
+import About from './Components/About'; 
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./Components/GlobalStyles";
 import { lightTheme, darkTheme } from "./Components/Themes"
@@ -10,7 +11,7 @@ import Toggle from './Components/Toggler';
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
-import UpdateModal from './Components/UpdateModal';
+// import UpdateModal from './Components/UpdateModal';
 import LandingPage from './Components/LandingPage';
 import Contact from './Components/Contact';
 
@@ -29,24 +30,26 @@ function App() {
       <Toggle theme={theme} toggleTheme={themeToggler} />
       <nav class="NAVBAR">
         <h1>PinteReach</h1>
-          {/*JULIAN */}  
+
           {/*Search Bar */}    
           <input type="text" placeholder="Search.."/>
+          
           {/*Links */} 
-          <Link className="active" to="/">Home</Link>
+          <Link className="active" to="/home">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
-
-          {/*STEPH */}
           <Link to='/login'>Log In</Link>
           <Link to='/signup'>Sign Up</Link>   
       </nav>
-      {/* <img src='https://kittentoob.com/wp-content/uploads/2016/10/Scottish-Fold-1.jpg' alt=''/> */}
       <br/>
 
       <Link to='/userdashboard'>Access Test Userdashboard</Link>
 
     <Switch>
+      <Route path='/about'>
+        <About />
+      </Route>
+      
       <Route exact path='/login'>
         <LoginForm />
       </Route>
@@ -61,9 +64,13 @@ function App() {
       <Route exact path='/contact' component={Contact}>
       </Route>
 
-       <Route exact path='/update' component={UpdateModal}>
+      <Route exact path='/home'>
+        <Home />
+      </Route>
 
-       </Route>
+       {/* <Route exact path='/update' component={UpdateModal}> */}
+
+       {/* </Route> */}
     </Switch>
     
 
