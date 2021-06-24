@@ -1,15 +1,19 @@
 import React from 'react';
+
 import LoginForm from './Components/LoginForm';
 import SignUpForm from './Components/SignUpForm';
+
 import Home from './Components/Home'; 
+
 import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./components/GlobalStyles";
-import { lightTheme, darkTheme } from "./components/Themes"
+import { GlobalStyles } from "./Components/GlobalStyles";
+import { lightTheme, darkTheme } from "./Components/Themes"
 import  {useDarkMode} from "./Hooks/useDarkMode";
-import Toggle from './components/Toggler'; 
+import Toggle from './Components/Toggler'; 
+
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
-import Dashboard from './components/Dashboard'; 
+import Dashboard from './Components/Dashboard'; 
 
 
 function App() {
@@ -24,26 +28,26 @@ function App() {
       <>
       <GlobalStyles/>
     <div className="App">
-      <Toggle theme={theme} toggleTheme={themeToggler} />
-      <nav class="NAVBAR">
+      
+      <nav className="NAVBAR">
         <h1>PinteReach</h1>
           {/*JULIAN */}  
           {/*Search Bar */}    
           <input type="text" placeholder="Search.."/>
           {/*Links */} 
-          <a class="active" href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <Link className="active" to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to= "/contact">Contact</Link>
 
           {/*STEPH */}
           <Link to='/login'>Log In</Link>
-          <Link to='/signup'>Sign Up</Link>   
+          <Link to='/signup'>Sign Up</Link>   <Toggle theme={theme} toggleTheme={themeToggler} />
       </nav>
       {/* <img src='https://kittentoob.com/wp-content/uploads/2016/10/Scottish-Fold-1.jpg' alt=''/> */}
       <br/>
-
+<div className='ACCESS_STYLE'>
       <Link to='/userdashboard'>Access Test Userdashboard</Link>
-
+</div>
     <Switch>
       <Route exact path='/login'>
         <LoginForm />
@@ -56,9 +60,6 @@ function App() {
         <SignUpForm />
       </Route>
 
-       <Route exact path='/update' component={UpdateModal}>
-
-       </Route>
     </Switch>
     
 
