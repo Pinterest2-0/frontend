@@ -76,7 +76,7 @@ export default function LoginForm() {
 
             <div className='loginFormContainer'>
                 <form onSubmit={submit} className='loginForm'>
-                    <h1> Welcome Back! </h1>
+                    <h1 className='loginwelcome'>  Welcome Back! </h1>
                     <h2> Member Log In</h2>
 
                     <div className='loginErrors'>

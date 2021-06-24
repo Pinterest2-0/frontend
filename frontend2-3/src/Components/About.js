@@ -5,7 +5,7 @@ export default function About() {
         <div className='aboutContainer'>
 
             <div className='aboutImageContainer'>
-                <img src='https://i.pinimg.com/474x/13/31/97/133197463030cdaa084cf6d763594b4d.jpg'></img>
+                <img src='https://i.pinimg.com/474x/13/31/97/133197463030cdaa084cf6d763594b4d.jpg' alt=''></img>
             </div>
 
             <div class="vl"></div>

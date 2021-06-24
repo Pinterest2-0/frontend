@@ -1,9 +1,9 @@
 import React from 'react'; 
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components'
-// import {MdEdit} from 'react-icons/md';
-// import {RiArchiveDrawerLine} from 'react-icons/ri';
-// import {TiDelete} from 'react-icons/ti';
+//import {MdEdit} from 'react-icons/md';
+//import {RiArchiveDrawerLine} from 'react-icons/ri';
+//import {TiDelete} from 'react-icons/ti';
 
 
 export const Button = styled.button`
@@ -18,8 +18,8 @@ border-radius: 3px;
 `
 
 const Card = styled.div`
-margin: 0 auto; 
-
+margin-left: 300px; 
+margin-right: 300px;
 }
 `
 
@@ -43,7 +43,7 @@ push('/update')
             {/* <img src={avatar} alt="" /> */}
                     <p className='title'>Title: {title}</p>
                     <p>Category: {category}</p>
-                    <a href={link}>Read More</a>
+                    <a  className='READMORE' href={link}>Read More</a>
                     <p>Summary: {description}</p>
                     <div>
                     <Button className="primarybtn" primary onClick={handleModal}>{/*<MdEdit/>*/} Edit</Button>
