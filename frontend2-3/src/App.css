@@ -22,7 +22,7 @@
   margin-left:25px;
   color:black;
 }
-
+/*CATEGORIES*/
 .categories button{
   margin-left:15px;
   margin-top:5px;
@@ -176,6 +176,7 @@ background-color: #40826D;
   width: 30%;
   align-self: center;
   font-size: 3vh;
+  margin-left:65px;
   }
 
 .loginForm input{
