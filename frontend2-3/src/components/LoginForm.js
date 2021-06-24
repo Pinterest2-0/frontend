@@ -70,11 +70,13 @@ export default function LoginForm() {
         <div className='loginComponent'>
             <div className='loginImage'>
                 <img src='https://c0.wallpaperflare.com/preview/728/375/731/aerial-analog-background-blog.jpg' alt='typing on laptop at desk'></img>
-
             </div>
+
+            <div class="vl"></div>
 
             <div className='loginFormContainer'>
                 <form onSubmit={submit} className='loginForm'>
+                    <h1> Welcome Back! </h1>
                     <h2> Member Log In</h2>
 
                     <div className='loginErrors'>
