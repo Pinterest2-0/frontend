@@ -90,7 +90,7 @@ export default function SignUpForm() {
     return (
         <div className='signUpFormContainer'>
             <div className='signUpImage'>
-                <img src='https://image.freepik.com/free-vector/web-research-background-design_1300-40.jpg'></img>
+                <img src='https://image.freepik.com/free-vector/web-research-background-design_1300-40.jpg' alt=''></img>
             </div>
 
             <div class="vl"></div>
