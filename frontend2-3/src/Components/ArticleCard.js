@@ -43,7 +43,7 @@ push('/update')
             {/* <img src={avatar} alt="" /> */}
                     <p className='title'>Title: {title}</p>
                     <p>Category: {category}</p>
-                    <a href={link}>Read More</a>
+                    <a  className='READMORE' href={link}>Read More</a>
                     <p>Summary: {description}</p>
                     <div>
                     <Button className="primarybtn" primary onClick={handleModal}>{/*<MdEdit/>*/} Edit</Button>

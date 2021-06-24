@@ -30,24 +30,25 @@ function App() {
     <div className="App">
       
       <nav className="NAVBAR">
-        <h1>PinteReach</h1>
+        <h1 className='apptitle'>PinteReach</h1>
 
           {/*Search Bar */}    
           <input type="text" placeholder="Search.."/>
           
           {/*Links */} 
-          <Link className="active" to="/home">Home</Link>
+          <Link className="active" to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to= "/contact">Contact</Link>
 
           {/*STEPH */}
           <Link to='/login'>Log In</Link>
-          <Link to='/signup'>Sign Up</Link>   <Toggle theme={theme} toggleTheme={themeToggler} />
+          <Link to='/signup'>Sign Up</Link>   
+          <Toggle theme={theme} toggleTheme={themeToggler} />
       </nav>
       <br/>
-<div className='ACCESS_STYLE'>
-      <Link to='/userdashboard'>Access Test Userdashboard</Link>
-</div>
+
+      <Link className='dashLink' to='/userdashboard'>Access Test Userdashboard</Link>
+
     <Switch>
       <Route path='/about'>
         <About />

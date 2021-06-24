@@ -17,6 +17,19 @@
 .App img{padding-top: 15px
 }
 
+.apptitle{
+  margin-top:25px;
+  margin-left:25px;
+  color:black;
+}
+
+.categories button{
+  margin-left:15px;
+  margin-top:5px;
+  padding:5px;
+  margin-bottom:15px;
+}
+
 
 .NAVBAR {
   background-color: #40826D;
@@ -43,7 +56,7 @@ padding-bottom: 10px;
   margin-top: 22px;
   margin-right: 12px;
   font-size: 1rem;
-  height: 30px;
+  height: 25px;
   width: 210px;
   margin-left:10px;
 }
@@ -85,16 +98,25 @@ button:hover{
   border-bottom: 1px solid black; 
 }
 .CardContainer:hover{ 
-background-color: #bcbcbe;
+background-color: #bcbcbecc;
 }
 
 #dashboardTitle{ 
-  text-align: left; 
+  text-align: middle; 
   border-bottom: 1px solid black; 
-  margin-bottom: 0; 
+  padding-bottom: 15px; 
 }
+
+.dashLink{
+  color:#40826D
+}
+
+.READMORE{
+  color:#40826D; 
+}
+
 .title{ 
-  margin-top: 0; 
+  margin-top:0;
 }
 .Modal{ 
   z-index: 1000; 
@@ -111,10 +133,17 @@ background-color: #bcbcbe;
   top: 0;
 }
 
+
+
 /* Styles for Login Component */
+
 .loginComponent{
   display: flex;
   flex-flow: row nowrap;
+}
+
+.loginwelcome{
+  padding:3px;
 }
 
 .loginImage{
@@ -129,7 +158,7 @@ background-color: #bcbcbe;
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  margin-left: 20%;
+  margin-left: 15%;
 }
 
 .loginForm h1{
@@ -153,6 +182,7 @@ background-color: #40826D;
   width: 40%;
   align-self: center;
   font-size: 3vh;
+  margin-left:10px;
 }
 
 .loginForm label{
@@ -166,7 +196,11 @@ background-color: #40826D;
 }
 
 
+
+
+
 /* Styles for About Component */
+
 .aboutContainer{
   display: flex;
   flex-flow: row nowrap;
@@ -177,13 +211,14 @@ background-color: #40826D;
 }
 
 .aboutImageContainer img{
-  height: 90vh;
+  height: 65vh;
   margin-top: 8%;
 }
 
 .aboutContent{
   width: 45%;
   text-align: left;
+  margin-right:150px;
 }
 
 .aboutContainer h1{
@@ -191,6 +226,8 @@ background-color: #40826D;
   text-align: center;
   background-color: #40826D;
 }
+
+
 
 /* Styles for Sign Up Component*/
 
@@ -200,18 +237,19 @@ background-color: #40826D;
 }
 
 .signUpImage{
-  width: 50%
+  width: 50%;
 }
 
 .signUpImage img{
   width: 90%;
-  height: 90vh
+  height: 75vh
 }
 
 .signUpForm{
   display: flex;
   flex-flow: column nowrap;
   width: 45%;
+  margin-right:150px;
 }
 
 .signUpForm h1{
