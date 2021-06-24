@@ -14,7 +14,7 @@ import Toggle from './Components/Toggler';
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
-
+import CategoryList from './Components/CategoryList';
 
 function App() {
   
@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       
       <nav className="NAVBAR">
-        <h1>PinteReach</h1>
+        <h1 className='title'>PinteReach</h1>
           {/*JULIAN */}  
           {/*Search Bar */}    
           <input type="text" placeholder="Search.."/>
@@ -41,13 +41,16 @@ function App() {
 
           {/*STEPH */}
           <Link to='/login'>Log In</Link>
-          <Link to='/signup'>Sign Up</Link>   <Toggle theme={theme} toggleTheme={themeToggler} />
+          <Link to='/signup'>Sign Up</Link>   
+
+          <Toggle theme={theme} toggleTheme={themeToggler} />
+
       </nav>
-      {/* <img src='https://kittentoob.com/wp-content/uploads/2016/10/Scottish-Fold-1.jpg' alt=''/> */}
+    
       <br/>
-<div className='ACCESS_STYLE'>
-      <Link to='/userdashboard'>Access Test Userdashboard</Link>
-</div>
+
+      <Link className='dashboardLink' to='/userdashboard'>Access Test Userdashboard</Link>
+  <CategoryList/>
     <Switch>
       <Route exact path='/login'>
         <LoginForm />

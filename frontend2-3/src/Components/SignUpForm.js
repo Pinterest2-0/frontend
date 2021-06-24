@@ -91,7 +91,7 @@ export default function SignUpForm() {
         <form onSubmit={submit}>
             <h2>Register</h2>
             <p>Create your account! It is free for the first month!</p>
-
+<div className='signupinputs'>
             <div className='signUpErrors'>
                 <div>{signUpErrors.firstname}</div>
                 <div>{signUpErrors.lastname}</div>
@@ -125,14 +125,14 @@ export default function SignUpForm() {
                 <input name='passwordconfirm' type='password' value={signUp.passwordconfirm} placeholder='Confirm your password' onChange={changes}/>
             </label>
             <br/>
-
+</div>
             <label>
                 I accept the Terms of Use and Privacy Policy.
                 <input name='terms' type='checkbox' onChange={changes}/>
             </label>
             <br/>
 
-            <button type='submit' disabled={disabled} >Register!</button>          
+            <button className='signupbutton' type='submit' disabled={disabled} >Register!</button>          
         </form>
     )
 }

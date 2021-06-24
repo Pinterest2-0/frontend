@@ -18,8 +18,8 @@ border-radius: 3px;
 `
 
 const Card = styled.div`
-margin-left: 300px; 
-margin-right: 300px;
+margin-left: 150px; 
+margin-right: 150px;
 }
 `
 
@@ -43,7 +43,7 @@ push('/update')
             {/* <img src={avatar} alt="" /> */}
                     <p className='title'>Title: {title}</p>
                     <p>Category: {category}</p>
-                    <a href={link}>Read More</a>
+                    <a className='read' href={link}>Read More</a>
                     <p>Summary: {description}</p>
                     <div>
                     <Button className="primarybtn" primary onClick={handleModal}>{/*<MdEdit/>*/} Edit</Button>

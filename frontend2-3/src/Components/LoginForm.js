@@ -27,6 +27,7 @@ export default function LoginForm() {
             axios
             .post('https://pintereachunit4.herokuapp.com/api/auth/login', member)
             .then(response => {
+            localStorage.setItem('token', response.data.token);
                 setCurrentMember([...currentMember, member]);
             })
             .catch(error => {
@@ -69,7 +70,7 @@ export default function LoginForm() {
     return (
         <form onSubmit={submit}>
             <h2> Member Log In</h2>
-
+<div className='logininputs'>
             <div className='loginErrors'>
                 <div>{loginErrors.username}</div>
                 <div>{loginErrors.password}</div>
@@ -77,16 +78,16 @@ export default function LoginForm() {
 
             <label>
                 Username
-                <input name='username' type='text' value={login.username} onChange={changes} />
+                <input className='usernameinput' name='username' type='text' value={login.username} onChange={changes} />
             </label>
             <br/>
 
             <label>
                 Password
-                <input name='password' type='password' value={login.password} onChange={changes} />
+                <input className='passwordinput'name='password' type='password' value={login.password} onChange={changes} />
             </label>
             <br/>
-
+</div>
             <button type='submit'>Log In!</button>
             
         </form>
