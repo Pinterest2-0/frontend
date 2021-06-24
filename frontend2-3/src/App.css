@@ -98,3 +98,16 @@ background-color: skyblue;
 .Modal{ 
   z-index: 1000; 
 }
+
+
+/* Styles for Login Component */
+.loginComponent{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/* Styles for About Component */
+.aboutContainer{
+  display: flex;
+  flex-flow: column nowrap;
+}

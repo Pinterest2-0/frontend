@@ -1,9 +1,9 @@
 import React, {useState} from 'react'; 
 import {useParams, useHistory} from 'react-router-dom';
 import styled from 'styled-components'
-import {MdEdit} from 'react-icons/md';
-import {RiArchiveDrawerLine} from 'react-icons/ri';
-import {TiDelete} from 'react-icons/ti';
+// import {MdEdit} from 'react-icons/md';
+// import {RiArchiveDrawerLine} from 'react-icons/ri';
+// import {TiDelete} from 'react-icons/ti';
 
 
 export const Button = styled.button`
@@ -46,9 +46,9 @@ push('/update')
                     <a href={link}>Read More</a>
                     <p>Summary: {description}</p>
                     <div>
-                    <Button className="primarybtn" primary onClick={handleModal}><MdEdit/> Edit</Button>
-                    <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
-                    <Button className="primarybtn" primary><TiDelete/>Delete</Button>
+                    <Button className="primarybtn" primary onClick={handleModal}>{/*<MdEdit/>*/} Edit</Button>
+                    <Button className="primarybtn" primary>{/*<RiArchiveDrawerLine/>*/}Archive</Button>
+                    <Button className="primarybtn" primary>{/*<TiDelete/>*/}Delete</Button>
                     </div>
                 
         </Card>

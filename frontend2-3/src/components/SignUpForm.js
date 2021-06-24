@@ -88,7 +88,7 @@ export default function SignUpForm() {
     }, [signUp])
 
     return (
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className='signUpForm'>
             <h2>Register</h2>
             <p>Create your account! It is free for the first month!</p>
 
