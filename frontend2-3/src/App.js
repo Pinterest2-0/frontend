@@ -11,7 +11,7 @@ import {Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
 import UpdateModal from './Components/UpdateModal';
-
+import LandingPage from './Components/LandingPage';
 
 function App() {
   
@@ -32,9 +32,9 @@ function App() {
           {/*Search Bar */}    
           <input type="text" placeholder="Search.."/>
           {/*Links */} 
-          <a class="active" href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <Link className="active" to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
 
           {/*STEPH */}
           <Link to='/login'>Log In</Link>
@@ -51,7 +51,7 @@ function App() {
       </Route>
         
       <Route exact path='/userdashboard' component={Dashboard}/>
-      < Route exact path='/' component={Home}/>
+      < Route exact path='/' component={LandingPage}/>
 
       <Route exact path='/signup'>
         <SignUpForm />
