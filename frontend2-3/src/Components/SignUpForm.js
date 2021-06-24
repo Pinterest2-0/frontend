@@ -88,51 +88,59 @@ export default function SignUpForm() {
     }, [signUp])
 
     return (
-        <form onSubmit={submit}>
-            <h2>Register</h2>
-            <p>Create your account! It is free for the first month!</p>
-
-            <div className='signUpErrors'>
-                <div>{signUpErrors.firstname}</div>
-                <div>{signUpErrors.lastname}</div>
-                <div>{signUpErrors.username}</div>
-                <div>{signUpErrors.password}</div>
-                <div>{signUpErrors.passwordconfirm}</div>
-                <div>{signUpErrors.terms}</div>
+        <div className='signUpFormContainer'>
+            <div className='signUpImage'>
+                <img src='https://image.freepik.com/free-vector/web-research-background-design_1300-40.jpg'></img>
             </div>
 
-            <label>
-                <input name='firstname' type='text' value={signUp.firstname} placeholder='First Name' onChange={changes}/>
-            </label>
-            <br/>
+            <div class="vl"></div>
+        
+            <form onSubmit={submit} className='signUpForm'>
+                <h1>Sign Up Today!</h1>
+                <p>Create your account! It is free for the first month!</p>
 
-            <label>
-                <input name='lastname' type='text' value={signUp.lastname} placeholder='Last Name' onChange={changes}/>
-            </label>
-            <br/>
+                <div className='signUpErrors'>
+                    <div>{signUpErrors.firstname}</div>
+                    <div>{signUpErrors.lastname}</div>
+                    <div>{signUpErrors.username}</div>
+                    <div>{signUpErrors.password}</div>
+                    <div>{signUpErrors.passwordconfirm}</div>
+                    <div>{signUpErrors.terms}</div>
+                </div>
 
-            <label>
-                <input name='username' type='text' value={signUp.username} placeholder='Choose a username' onChange={changes}/>
-            </label>
-            <br/>
+                <label>
+                    <input name='firstname' type='text' value={signUp.firstname} placeholder='First Name' onChange={changes}/>
+                </label>
+                <br/>
 
-            <label>
-                <input name='password' type='password' value={signUp.password} placeholder='Create your password' onChange={changes}/>
-            </label>
-            <br/>
+                <label>
+                    <input name='lastname' type='text' value={signUp.lastname} placeholder='Last Name' onChange={changes}/>
+                </label>
+                <br/>
 
-            <label>
-                <input name='passwordconfirm' type='password' value={signUp.passwordconfirm} placeholder='Confirm your password' onChange={changes}/>
-            </label>
-            <br/>
+                <label>
+                    <input name='username' type='text' value={signUp.username} placeholder='Choose a username' onChange={changes}/>
+                </label>
+                <br/>
 
-            <label>
-                I accept the Terms of Use and Privacy Policy.
-                <input name='terms' type='checkbox' onChange={changes}/>
-            </label>
-            <br/>
+                <label>
+                    <input name='password' type='password' value={signUp.password} placeholder='Create your password' onChange={changes}/>
+                </label>
+                <br/>
 
-            <button type='submit' disabled={disabled} >Register!</button>          
-        </form>
+                <label>
+                    <input name='passwordconfirm' type='password' value={signUp.passwordconfirm} placeholder='Confirm your password' onChange={changes}/>
+                </label>
+                <br/>
+
+                <label>
+                    I accept the Terms of Use and Privacy Policy.
+                    <input name='terms' type='checkbox' onChange={changes}/>
+                </label>
+                <br/>
+
+                <button type='submit' disabled={disabled} >Register!</button>          
+            </form>
+        </div>
     )
 }

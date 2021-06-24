@@ -67,28 +67,39 @@ export default function LoginForm() {
     }
 
     return (
-        <form onSubmit={submit}>
-            <h2> Member Log In</h2>
-
-            <div className='loginErrors'>
-                <div>{loginErrors.username}</div>
-                <div>{loginErrors.password}</div>
+        <div className='loginComponent'>
+            <div className='loginImage'>
+                <img src='https://c0.wallpaperflare.com/preview/728/375/731/aerial-analog-background-blog.jpg' alt='typing on laptop at desk'></img>
             </div>
 
-            <label>
-                Username
-                <input name='username' type='text' value={login.username} onChange={changes} />
-            </label>
-            <br/>
+            <div class="vl"></div>
 
-            <label>
-                Password
-                <input name='password' type='password' value={login.password} onChange={changes} />
-            </label>
-            <br/>
+            <div className='loginFormContainer'>
+                <form onSubmit={submit} className='loginForm'>
+                    <h1> Welcome Back! </h1>
+                    <h2> Member Log In</h2>
 
-            <button type='submit'>Log In!</button>
-            
-        </form>
+                    <div className='loginErrors'>
+                        <div>{loginErrors.username}</div>
+                        <div>{loginErrors.password}</div>
+                    </div>
+
+                    <label>
+                        Username
+                        <input name='username' type='text' value={login.username} onChange={changes} />
+                    </label>
+                    <br/>
+
+                    <label>
+                        Password
+                        <input name='password' type='password' value={login.password} onChange={changes} />
+                    </label>
+                    <br/>
+
+                    <button type='submit'>Log In!</button>
+                    
+                </form>
+            </div>
+        </div>
     )
 }
