@@ -11,7 +11,9 @@ import Toggle from './Components/Toggler';
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
-
+import UpdateModal from './Components/UpdateModal';
+import LandingPage from './Components/LandingPage';
+import Contact from './Components/Contact';
 
 function App() {
   
@@ -31,7 +33,8 @@ function App() {
 
           {/*Search Bar */}    
           <input type="text" placeholder="Search.."/>
-
+          
+          {/*Links */} 
           <Link className="active" to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
@@ -52,11 +55,18 @@ function App() {
       </Route>
         
       <Route exact path='/userdashboard' component={Dashboard}/>
-      < Route exact path='/' component={Home}/>
+      < Route exact path='/' component={LandingPage}/>
 
       <Route exact path='/signup'>
         <SignUpForm />
       </Route>
+
+      <Route exact path='/contact' component={Contact}>
+      </Route>
+
+       <Route exact path='/update' component={UpdateModal}>
+
+       </Route>
     </Switch>
     
 

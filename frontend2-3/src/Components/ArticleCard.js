@@ -1,5 +1,5 @@
-import React, {useState} from 'react'; 
-import {useParams, useHistory} from 'react-router-dom';
+import React from 'react'; 
+import {useHistory} from 'react-router-dom';
 import styled from 'styled-components'
 // import {MdEdit} from 'react-icons/md';
 // import {RiArchiveDrawerLine} from 'react-icons/ri';

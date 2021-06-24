@@ -100,6 +100,7 @@ background-color: skyblue;
 }
 
 
+/* Styles for ANY COMPONENT WITH THIS CLASS*/
 .vl {
   border-left: 2px solid #40826D;
   height: auto;
@@ -108,7 +109,6 @@ background-color: skyblue;
   margin-right: 5%;
   top: 0;
 }
-
 
 /* Styles for Login Component */
 .loginComponent{
@@ -190,3 +190,5 @@ background-color: #40826D;
   text-align: center;
   background-color: #40826D;
 }
+
+/* Styles for Sign Up Component*/
