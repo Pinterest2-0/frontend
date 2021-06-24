@@ -3,7 +3,7 @@ import React from 'react';
 import LoginForm from './Components/LoginForm';
 import SignUpForm from './Components/SignUpForm';
 
-import Home from './Components/Home'; 
+import LandingPage from './Components/LandingPage'; 
 
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./Components/GlobalStyles";
@@ -54,7 +54,7 @@ function App() {
       </Route>
         
       <Route exact path='/userdashboard' component={Dashboard}/>
-      < Route exact path='/' component={Home}/>
+      < Route exact path='/' component={LandingPage}/>
 
       <Route exact path='/signup'>
         <SignUpForm />
