@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import signUpSchema from '../schema_validation/signUpSchema';
 import axios from 'axios';
+import { axiosWithAuth } from '../Utils/AxiosWithAuth';
 
 const initialSignUpForm = {
     firstname: '',
@@ -43,8 +44,8 @@ export default function SignUpForm() {
 
     // POST NEW MEMEBERS
     const postNewMember = member => {
-        axios
-        .post('https://pintereachunit4.herokuapp.com/api/auth/register', member)
+        axiosWithAuth()
+        .post('/auth/register', member)
         .then(response => {
             setNewMember([...newMember, member]);
         })

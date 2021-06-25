@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as yup from 'yup';
 import loginSchema from '../schema_validation/loginSchema';
 import axios from 'axios';
+import {axiosWithAuth} from '../Utils/AxiosWithAuth'; 
 
 // LOGIN INITIAL FORM
 const initialLoginForm = {
@@ -24,8 +25,8 @@ export default function LoginForm() {
 
         // POST CURRENT MEMEBERS
         const postCurrentMember = member => {
-            axios
-            .post('https://pintereachunit4.herokuapp.com/api/auth/login', member)
+            axiosWithAuth()
+            .post('/auth/login', member)
             .then(response => {
                 setCurrentMember([...currentMember, member]);
             })

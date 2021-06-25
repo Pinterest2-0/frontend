@@ -11,7 +11,7 @@ import { GlobalStyles } from "./Components/GlobalStyles";
 import { lightTheme, darkTheme } from "./Components/Themes"
 import  {useDarkMode} from "./Hooks/useDarkMode";
 import Toggle from './Components/Toggler'; 
-
+import UpdateModal from './Components/UpdateModal';  // This is needed. 
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
@@ -70,6 +70,7 @@ function App() {
       <Route exact path='/signup'>
         <SignUpForm />
       </Route>
+<Route exact path='/update' component={UpdateModal}/>
 
     </Switch>
     

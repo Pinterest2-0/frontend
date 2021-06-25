@@ -47,9 +47,9 @@ push('/update')
                     <a  className='READMORE' href={link}>Read More</a>
                     <p>Summary: {description}</p>
                     <div>
-                    <Button className="primarybtn" primary onClick={handleModal}>{/*<MdEdit/>*/} Edit</Button>
-                    <Button className="primarybtn" primary>{/*<RiArchiveDrawerLine/>*/}Archive</Button>
-                    <Button className="primarybtn" primary>{/*<TiDelete/>*/}Delete</Button>
+                    <Button className="primarybtn" primary onClick={handleModal}><MdEdit/> Edit</Button>
+                    <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
+                    <Button className="primarybtn" primary><TiDelete/>Delete</Button>
                     </div>
                 
                 {/* <img src={avatar} alt="" /> */}
