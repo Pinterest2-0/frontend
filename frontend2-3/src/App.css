@@ -22,7 +22,7 @@
   margin-left:25px;
   color:black;
 }
-
+/*CATEGORIES*/
 .categories button{
   margin-left:15px;
   margin-top:5px;
@@ -35,7 +35,7 @@
   background-color: #40826D;
   display:flex;
   padding-top:5px;
-padding-bottom: 10px;
+padding-bottom: 30px;
 
 }
 
@@ -130,7 +130,7 @@ background-color: #bcbcbecc;
   left: 50%;
   margin-left: -3px;
   margin-right: 5%;
-  top: 0;
+  margin-top: 20px;
 }
 
 
@@ -147,7 +147,8 @@ background-color: #bcbcbecc;
 }
 
 .loginImage{
-  width: 50%
+  width: 50%;
+margin-top: 7px;
 }
 
 .loginImage img{
@@ -176,6 +177,7 @@ background-color: #40826D;
   width: 30%;
   align-self: center;
   font-size: 3vh;
+  margin-left:65px;
   }
 
 .loginForm input{
@@ -257,7 +259,6 @@ background-color: #40826D;
   font-size: 8vh;
   background-color: #40826D;
 }
-
 .signUpForm button{
   width: 30%;
   align-self: center;
@@ -279,4 +280,14 @@ background-color: #40826D;
 .signUpErrors{
   color:firebrick;
   font-style: italic;
+}
+
+
+
+/*CONTACT*/
+
+.contactImage{
+  height:300px;
+  margin-bottom:-60px;
+  margin-top:40px;
 }
