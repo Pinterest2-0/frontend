@@ -13,7 +13,8 @@ transform: translate(-50%, 0);
 width: 70%; 
 padding: 4rem; 
 border: 2px solid black; 
-border-radius: 30px; 
+border-radius: 30px;
+z-index: 1000;  
 `
 
 const JazzyInput = styled.input`
