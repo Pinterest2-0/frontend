@@ -58,6 +58,7 @@ const UpdateModal = () => {
                 value={title}
                 onChange={handleChange}
                 >
+                    
                 <input />
                 </Form.Item>
 
