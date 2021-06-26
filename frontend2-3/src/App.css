@@ -20,7 +20,10 @@
 .apptitle{
   margin-top:25px;
   margin-left:25px;
-  color:black;
+  margin-right:18px;
+  color:white;
+  font-family: 'Gotham';
+  font-weight: 900;
 }
 /*CATEGORIES*/
 .categories button{
@@ -35,7 +38,7 @@
   background-color: #40826D;
   display:flex;
   padding-top:5px;
-padding-bottom: 30px;
+padding-bottom: 16px;
 
 }
 
@@ -44,10 +47,19 @@ padding-bottom: 30px;
   display: block;
   color: black;
   text-align: center;
-  padding: 20px 20px;
-  text-decoration: underline;
-  font-size: 1.5rem;
+  padding: 26px 14px 14px 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'Helvetica Neue';
+  font-weight: bold;
+  
 }
+
+.NAVBAR a:hover {
+  text-decoration: underline;
+  color: lightgray;
+}
+
 
 .NAVBAR input[type=text] {
   float: right;

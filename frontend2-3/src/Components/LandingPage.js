@@ -37,8 +37,8 @@ const ButtonGroup = styled.div`
     const MyContainer = styled.div`
         display: flex;
         justify-content: center;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 150px;
+        padding-right: 150px;
     `
     return (
         <div className='landingContainer'>
@@ -49,7 +49,7 @@ const ButtonGroup = styled.div`
                         <p className='text'>
                             <b>PinteReach</b> is research made easy. Save and organize your articles, categorize by topic, custom-rank the items in your archive. 
                             <br/><br/>
-                            The research solution you've been waiting for has arrived. <br/>Create your free account today.
+                            The modern research solution has arrived. <br/>Create your free account today.
                         </p>
                         <ButtonGroup>
                             <Link to='/signup'>
