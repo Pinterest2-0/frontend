@@ -70,7 +70,7 @@ function App() {
       <Route exact path='/signup'>
         <SignUpForm />
       </Route>
-<Route exact path='/update' component={UpdateModal}/>
+<Route exact path='/update' component={UpdateModal}/>   {/*This is very much needed*/}
 
     </Switch>
     

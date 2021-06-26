@@ -18,9 +18,7 @@ const signUpFormErrors = {
     firstname: '',
     lastname: '',
     username: '',
-    password: '',
-    passwordconfirm: '',
-    terms: '',
+    password: ''
 }
 
 export default function SignUpForm() {
@@ -45,9 +43,10 @@ export default function SignUpForm() {
     // POST NEW MEMEBERS
     const postNewMember = member => {
         axiosWithAuth()
-        .post('/auth/register', member)
+        .post('auth/register', member) // https://pintereachunit4.herokuapp.com/api/auth/register
         .then(response => {
             setNewMember([...newMember, member]);
+            console.log(response)
         })
         .catch(error => {
             console.log('Error posting data: ', error)
@@ -73,8 +72,6 @@ export default function SignUpForm() {
             lastname: signUp.lastname,
             username: signUp.username,
             password: signUp.password,
-            passwordconfirm: signUp.passwordconfirm,
-            terms: signUp.terms,
         }
         postNewMember(newMem)
     }
@@ -105,8 +102,6 @@ export default function SignUpForm() {
                     <div>{signUpErrors.lastname}</div>
                     <div>{signUpErrors.username}</div>
                     <div>{signUpErrors.password}</div>
-                    <div>{signUpErrors.passwordconfirm}</div>
-                    <div>{signUpErrors.terms}</div>
                 </div>
 
                 <label>
@@ -126,17 +121,6 @@ export default function SignUpForm() {
 
                 <label>
                     <input name='password' type='password' value={signUp.password} placeholder='Create your password' onChange={changes}/>
-                </label>
-                <br/>
-
-                <label>
-                    <input name='passwordconfirm' type='password' value={signUp.passwordconfirm} placeholder='Confirm your password' onChange={changes}/>
-                </label>
-                <br/>
-
-                <label>
-                    I accept the Terms of Use and Privacy Policy.
-                    <input name='terms' type='checkbox' onChange={changes}/>
                 </label>
                 <br/>
 

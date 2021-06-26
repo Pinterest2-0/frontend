@@ -17,7 +17,14 @@ border: 2px solid black;
 border-radius: 30px;
 z-index: 1000;  
 `
-
+const layout = {
+    labelCol: {
+      span: 8,
+    },
+    wrapperCol: {
+      span: 16,
+    },
+  };
 
 const UpdateModal = () => {
     const { TextArea } = Input;
@@ -43,11 +50,11 @@ const UpdateModal = () => {
     return(
 
         <Container>
-            <Form onSubmit={handleSubmit}>
+            <Form {...layout} onSubmit={handleSubmit}>
                 <h2>Enter Your Changes Below</h2>
                 <Form.Item type="text" 
                 name='title'
-                placeholder='title'
+                label='Title'
                 value={title}
                 onChange={handleChange}
                 >
@@ -56,7 +63,7 @@ const UpdateModal = () => {
 
                 <Form.Item type="text" 
                 name='link'
-                placeholder='link'
+                label='Link'
                 value={link}
                 onChange={handleChange}>
 
