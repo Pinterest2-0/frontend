@@ -229,7 +229,28 @@ background-color: #40826D;
   background-color: #40826D;
 }
 
+/* Styles for LandingPage Component*/
 
+.landingPageImageContainer{
+  width: 60%;
+}
+
+.landingPageImageContainer img{
+  height: 52vh;
+}
+
+.landingContainer h1{
+  font-size: 3em;
+  text-align: center;
+}
+
+.landingContainer p{
+  font-size: 1.2em;
+}
+
+.landingText {
+  width: 40%;
+}
 
 /* Styles for Sign Up Component*/
 

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'; 
 
 const landingPage = () => {
+
     const Button = styled.button`
   background-color: #40826D;
   color: white;
@@ -28,27 +29,42 @@ const ButtonGroup = styled.div`
   justify-content: center;
 `
     const TextDiv = styled.div`
-        margin-top: 100px;
+        margin-top: 20px;
         @media screen and (max-width: 500px) {
             margin-top: 50px;
         }
     `
+    const MyContainer = styled.div`
+        display: flex;
+        justify-content: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    `
     return (
-        <div className='landing-container'>
+        <div className='landingContainer'>
             <TextDiv>
-                <h3 className='title'>Introducing Pintereach</h3>
-                <p className='text'>
-                    Pintereach is research made easy. Save and organize your articles, categorize by topic, custom-rank the items in your archive. The research solution you've been waiting for has arrived.
-                </p>
-            
-                <ButtonGroup>
-                    <Link to='/signup'>
-                        <Button>Signup</Button>
-                    </Link>
-                    <Link to='/login'>
-                        <Button>Login</Button>
-                    </Link>
-                </ButtonGroup>
+                <h1 className='title'>Introducing PinteReach</h1>
+                <MyContainer>
+                    <div className='landingText'>
+                        <p className='text'>
+                            <b>PinteReach</b> is research made easy. Save and organize your articles, categorize by topic, custom-rank the items in your archive. 
+                            <br/><br/>
+                            The research solution you've been waiting for has arrived. <br/>Create your free account today.
+                        </p>
+                        <ButtonGroup>
+                            <Link to='/signup'>
+                                <Button>Signup</Button>
+                            </Link>
+                            <Link to='/login'>
+                                <Button>Login</Button>
+                            </Link>
+                        </ButtonGroup>
+                    </div>
+                    <div className='landingPageImageContainer'>
+                        <img src='https://images.unsplash.com/photo-1623039405147-547794f92e9e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=906&q=80' alt=''></img>
+                    </div>
+                </MyContainer>
+               
             </TextDiv>
         </div>
     )
