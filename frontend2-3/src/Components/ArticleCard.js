@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {MdEdit} from 'react-icons/md';
 import {RiArchiveDrawerLine} from 'react-icons/ri';
 import {TiDelete} from 'react-icons/ti';
-import UpdateModal from './UpdateModal';
+
 
 export const Button = styled.button`
 background: ${props => props.primary ? "skyblue" : "white"};

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
 import loginSchema from '../schema_validation/loginSchema';
-import axios from 'axios';
 import {axiosWithAuth} from '../Utils/AxiosWithAuth'; 
 import {useHistory} from 'react-router-dom';
 
