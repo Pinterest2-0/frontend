@@ -38,7 +38,6 @@ const handleModal = () => {
 push('/update')
 }
     return(
-        <>
         <Card className="CardContainer">
             
             {/* <img src={avatar} alt="" /> */}
@@ -47,25 +46,12 @@ push('/update')
                     <a  className='READMORE' href={link}>Read More</a>
                     <p>Summary: {description}</p>
                     <div>
-                    <Button className="primarybtn" primary onClick={handleModal}>{/*<MdEdit/>*/} Edit</Button>
-                    <Button className="primarybtn" primary>{/*<RiArchiveDrawerLine/>*/}Archive</Button>
-                    <Button className="primarybtn" primary>{/*<TiDelete/>*/}Delete</Button>
+                    <Button className="primarybtn" primary onClick={handleModal}><MdEdit/> Edit</Button>
+                    <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
+                    <Button className="primarybtn" primary><TiDelete/>Delete</Button>
                     </div>
-                
-                {/* <img src={avatar} alt="" /> */}
-                        <p className='title'>Title: {title}</p>
-                        <p>Category: {category}</p>
-                        <a href={link}>Read More</a>
-                        <p>Summary: {description}</p>
-                        <div>
-                        <Button className="primarybtn" primary onClick={handleModal}><MdEdit/> Edit</Button>
-                        <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
-                        <Button className="primarybtn" primary><TiDelete/>Delete</Button>
-                        </div>
                     
             </Card>
-            <div><UpdateModal/></div>
-        </>
     )
 }
 
