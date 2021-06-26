@@ -21,17 +21,7 @@ const signUpSchema = yup.object().shape({
         .matches(
             /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
             "Password must contain at least 8 characters, one uppercase, one number and one special case character"
-        ),
-    passwordconfirm: yup
-        .string()
-        .required("Password must match above to confirm")
-        .when("password", {
-            is: password => (password && password.length > 0 ? true : false),
-            then: yup.string().oneOf([yup.ref("password")], "Password doesn't match")
-        }),
-    terms: yup
-        .boolean()
-        .oneOf([true], "You must sign your life away to register for Pintereach")
+        )
 });
 
 export default signUpSchema

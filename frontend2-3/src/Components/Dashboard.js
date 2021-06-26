@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ArticleCard from './ArticleCard'; 
 import axios from 'axios'
-import styled from 'styled-components';
+import CategoryList from './CategoryList'
+// import styled from 'styled-components';
 
 
 
@@ -26,7 +27,7 @@ useEffect(() => {
     return(
         <div class="Dashboard" >
             <h1 id='dashboardTitle'>My Articles</h1>
-
+            <CategoryList/>
             <section class="CardDashboard">
 
             
