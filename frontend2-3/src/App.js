@@ -67,7 +67,7 @@ function App() {
       <Route exact path='/userdashboard' component={Dashboard}/>
       < Route exact path='/' component={LandingPage}/>
 
-      <Route exact path='/signup'>
+      <Route path='/signup'>
         <SignUpForm />
       </Route>
 <Route exact path='/update' component={UpdateModal}/>   {/*This is very much needed*/}
