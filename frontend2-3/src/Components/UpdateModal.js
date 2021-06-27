@@ -6,17 +6,17 @@ import styled from 'styled-components';
 import { Input, Form } from 'antd';
 
 
-const Container = styled.div`
+// const Container = styled.div`
 
-position: fixed;
-left: 50%;
-transform: translate(-50%, 0);
-width: 70%; 
-padding: 4rem; 
-border: 2px solid black; 
-border-radius: 30px;
-z-index: 1000;  
-`
+// position: fixed;
+// left: 50%;
+// transform: translate(-50%, 0);
+// width: 70%; 
+// padding: 4rem; 
+// border: 2px solid black; 
+// border-radius: 30px;
+// z-index: 1000;  
+// `
 const layout = {
     labelCol: {
       span: 8,
@@ -26,9 +26,8 @@ const layout = {
     },
   };
 
-const UpdateModal = () => {
+const UpdateModal = ({setIsVisible}) => {
     const { TextArea } = Input;
-    const {push} = useHistory()
 
     const modalFormat = {
         title: '',
@@ -45,11 +44,11 @@ const UpdateModal = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        push('/userdashboard')
+        setIsVisible(false);
     }
     return(
 
-        <Container>
+        <div>
             <Form {...layout} onSubmit={handleSubmit}>
                 <h2>Enter Your Changes Below</h2>
                 <Form.Item type="text" 
@@ -82,7 +81,7 @@ const UpdateModal = () => {
                 <Button onClick={handleSubmit} primary><VscSave/> &nbsp; Save Changes</Button>
         </Form>
 
-        </Container>
+        </div>
     )
 }
 export default UpdateModal 

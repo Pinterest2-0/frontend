@@ -47,8 +47,8 @@ function App() {
           <Link to= "/contact">Contact</Link>
 
           {/*STEPH */}
-          <Link to='/login'>Log In</Link>
-          <Link to='/signup'>Sign Up</Link>   
+          {isLoggedIn ? null : <Link to='/login'>Log In</Link> }
+          {isLoggedIn ? null : <Link to='/signup'>Sign Up</Link>}   
           {isLoggedIn ? <Link onClick={handleLogout}>Log Out</Link> : null}
           {isLoggedIn ? <Link className='dashLink' to='/userdashboard'> Dashboard</Link>: null}
           <Toggle theme={theme} toggleTheme={themeToggler} />
