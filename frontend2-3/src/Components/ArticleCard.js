@@ -6,6 +6,7 @@ import {RiArchiveDrawerLine} from 'react-icons/ri';
 import {TiDelete} from 'react-icons/ti';
 import UpdateModal from './UpdateModal';
 import {axiosWithAuth} from '../Utils/AxiosWithAuth';
+import axios from 'axios';
 
 
 export const Button = styled.button`
@@ -43,7 +44,6 @@ const [isModalVisible, setIsModalVisible] = useState(false);
 const [localArticles, setLocalArticles] = useState('');
 
 const handleModal = () => {
-    
 setIsModalVisible(true); 
 }
 
@@ -57,16 +57,32 @@ useEffect(()=>{
         })
 }, [article_id]);
 
-// const handleDelete = () => {
-//     axiosWithAuth().delete(`articles/${article_id}`)
-//     .then( res => {
-//         const amendedArticles = article.filter(article => {
-//         return article.article_id !== {article_id}
-//     }), })
-//     .catch()
-    
-   
-// }
+const deleteArticles = (id) => {
+    const amendedArticles = article.filter(article => {
+        return article.id !== id
+    })
+        setGlobalArticles(amendedArticles)
+
+}
+
+
+
+const handleDelete = () => {
+    axios.delete(`https://pintereachunit4.herokuapp.com/api/articles/${article_id}`)
+    .then( res => {
+        console.log(res)
+        deleteArticles(article_id)
+        alert('article deleted!')
+         })
+    .catch(err => {
+        console.log('Not Working: ', err)
+    })
+
+}
+// Blanket message for features coming soon
+const handleFeature = () => {
+alert('Feature Coming Soon!')
+}
     return(
         <>
             <Card className="CardContainer">
@@ -78,13 +94,13 @@ useEffect(()=>{
                         <p>Summary: {description}</p>
                         <div>
                         <Button className="primarybtn" primary onClick={handleModal}><MdEdit/> Edit</Button>
-                        <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
-                        <Button className="primarybtn" primary ><TiDelete/>Delete</Button>
+                        <Button className="primarybtn" primary onClick={handleFeature}><RiArchiveDrawerLine/>Archive</Button>
+                        <Button className="primarybtn" primary onClick={handleDelete}><TiDelete/>Delete</Button>
                         </div>
                         
                 </Card>
             {isModalVisible ? <div className="UpdateModalContainer">
-                <UpdateModal setIsVisible={setIsModalVisible} editModal={localArticles}/>
+                <UpdateModal setIsVisible={setIsModalVisible} editModal={localArticles} setEditModal={setLocalArticles}setGlobalArticles={setGlobalArticles}/>
             </div> : null}
             </>
     )

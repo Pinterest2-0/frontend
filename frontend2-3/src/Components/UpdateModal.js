@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import { useHistory} from 'react-router-dom';
 import {Button} from './ArticleCard';
 import {VscSave} from 'react-icons/vsc';
 import styled from 'styled-components';
 import { Input, Form } from 'antd';
+import axios from 'axios';
+import {axiosWithAuth} from '../Utils/AxiosWithAuth';
 
 
 // const Container = styled.div`
@@ -26,26 +27,38 @@ const layout = {
     },
   };
 
-const UpdateModal = ({setIsVisible, editModal}) => {
+const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles}) => {
     const { TextArea } = Input;
-console.log("Testing for editModal: ",editModal)
-    const modalFormat = {
-        title: '',
-        link:'',
-        description:''
-    }
 
-    const [modalContent, setModalContent] = useState(modalFormat)
-    const {title, link, description} = modalContent
+    // const modalFormat = {
+    //     title: '',
+    //     link:'',
+    //     description:''
+    // }
+
+    // const [modalContent, setModalContent] = useState(modalFormat)
+    const {title, link, description} = editModal
 
     const handleChange = (event) => {
-        setModalContent({...modalContent, [event.target.name]:event.target.value})
+        setEditModal({...editModal, [event.target.name]:event.target.value})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        setIsVisible(false);
+
+        axiosWithAuth().put(`/articles/${editModal.article_id}`, editModal)
+        .then(res => {
+            console.log(res)
+            setIsVisible(false);
+        })
+        .catch(err => {
+            console.log("handleSubmit:UpdateModal:Not working: ", err)
+            setIsVisible(false);
+        })
     }
+const handleExit= () => {
+    setIsVisible(false);
+}
     return (
 
         <div>
@@ -54,26 +67,27 @@ console.log("Testing for editModal: ",editModal)
                 <input type="text" 
                 name='title'
                 label='Title'
-                value={editModal.title}
+                value={title}
                 onChange={handleChange}
                 />
 
                 <input type="text" 
                 name='link'
                 label='Link'
-                value={editModal.link}
+                value={link}
                 onChange={handleChange}/>
 
                 <TextArea type="text" 
-                name='summary'
+                name='description'
                 placeholder='Something short & sweet?'
-                value={editModal.description}
+                value={description}
                 onChange={handleChange}
                 autoSize={{ minRows: 5, maxRows: 7 }}
                 >
                 </TextArea>
                 <br />
                 <Button onClick={handleSubmit} primary><VscSave/> &nbsp; Save Changes</Button>
+                <Button onClick={handleExit} primary > Nevermind!</Button>
         </Form>
 
         </div>
