@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import signUpSchema from '../schema_validation/signUpSchema';
-import axios from 'axios';
+import { axiosWithAuth } from '../Utils/AxiosWithAuth';
 
 const initialSignUpForm = {
     firstname: '',
@@ -17,7 +17,6 @@ const signUpFormErrors = {
     lastname: '',
     username: '',
     password: '',
-
 }
 
 export default function SignUpForm() {
@@ -41,10 +40,11 @@ export default function SignUpForm() {
 
     // POST NEW MEMEBERS
     const postNewMember = member => {
-        axios
-        .post('https://pintereachunit4.herokuapp.com/api/auth/register', member)
+        axiosWithAuth()
+        .post('auth/register', member) // https://pintereachunit4.herokuapp.com/api/auth/register
         .then(response => {
             setNewMember([...newMember, member]);
+            console.log(response)
         })
         .catch(error => {
             console.log('Error posting data: ', error)
@@ -86,7 +86,7 @@ export default function SignUpForm() {
     return (
         <div className='signUpFormContainer'>
             <div className='signUpImage'>
-                <img src='https://image.freepik.com/free-vector/web-research-background-design_1300-40.jpg'></img>
+                <img src='https://image.freepik.com/free-vector/web-research-background-design_1300-40.jpg' alt=''></img>
             </div>
 
             <div class="vl"></div>

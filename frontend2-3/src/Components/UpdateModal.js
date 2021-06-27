@@ -3,7 +3,8 @@ import { useHistory} from 'react-router-dom';
 import {Button} from './ArticleCard';
 import {VscSave} from 'react-icons/vsc';
 import styled from 'styled-components';
-import { Input } from 'antd';
+import { Input, Form } from 'antd';
+
 
 const Container = styled.div`
 
@@ -13,16 +14,17 @@ transform: translate(-50%, 0);
 width: 70%; 
 padding: 4rem; 
 border: 2px solid black; 
-border-radius: 30px; 
+border-radius: 30px;
+z-index: 1000;  
 `
-
-const JazzyInput = styled.input`
-
-width: 40%; 
-padding: 1em;
-border-radius: 30px; 
-outline: none; 
-`
+const layout = {
+    labelCol: {
+      span: 8,
+    },
+    wrapperCol: {
+      span: 16,
+    },
+  };
 
 const UpdateModal = () => {
     const { TextArea } = Input;
@@ -48,23 +50,25 @@ const UpdateModal = () => {
     return(
 
         <Container>
-            <form onSubmit={handleSubmit}>
+            <Form {...layout} onSubmit={handleSubmit}>
                 <h2>Enter Your Changes Below</h2>
-                <JazzyInput type="text" 
+                <Form.Item type="text" 
                 name='title'
-                placeholder='title'
+                label='Title'
                 value={title}
                 onChange={handleChange}
-                />
-                <br />
-                <br />
-                <JazzyInput type="text" 
+                >
+                <input />
+                </Form.Item>
+
+                <Form.Item type="text" 
                 name='link'
-                placeholder='link'
+                label='Link'
                 value={link}
-                onChange={handleChange}/>
-                <br />
-                <br />
+                onChange={handleChange}>
+
+                <input />
+                </Form.Item>
                 <TextArea type="text" 
                 name='summary'
                 placeholder='Something short & sweet?'
@@ -74,8 +78,8 @@ const UpdateModal = () => {
                 >
                 </TextArea>
                 <br />
-                <Button primary><VscSave/> &nbsp; Save Changes</Button>
-        </form>
+                <Button onClick={handleSubmit} primary><VscSave/> &nbsp; Save Changes</Button>
+        </Form>
 
         </Container>
     )

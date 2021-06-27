@@ -13,12 +13,24 @@
   }
 }
 
+.apptitle{
+  margin-top:25px;
+  margin-left:25px;
+  color:black;
+}
+/*CATEGORIES*/
+.categories button{
+  margin-left:15px;
+  margin-top:5px;
+  padding:5px;
+  margin-bottom:15px;
+}
+
 .NAVBAR {
   background-color: #40826D;
   display:flex;
   padding-top:5px;
-padding-bottom: 10px;
-
+  padding-bottom: 30px;
 }
 
 .NAVBAR a {
@@ -38,8 +50,9 @@ padding-bottom: 10px;
   margin-top: 22px;
   margin-right: 12px;
   font-size: 1rem;
-  height: 30px;
+  height: 25px;
   width: 210px;
+  margin-left:10px;
 }
 
 
@@ -51,7 +64,7 @@ padding-bottom: 10px;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .App-link {
@@ -79,16 +92,25 @@ button:hover{
   border-bottom: 1px solid black; 
 }
 .CardContainer:hover{ 
-background-color: skyblue;
+background-color: #bcbcbecc;
 }
 
 #dashboardTitle{ 
-  text-align: left; 
+  text-align: middle; 
   border-bottom: 1px solid black; 
-  margin-bottom: 0; 
+  padding-bottom: 15px; 
 }
+
+.dashLink{
+  color:#40826D
+}
+
+.READMORE{
+  color:#40826D; 
+}
+
 .title{ 
-  margin-top: 0; 
+  margin-top:0;
 }
 .Modal{ 
   z-index: 1000; 
@@ -102,7 +124,7 @@ background-color: skyblue;
   left: 50%;
   margin-left: -3px;
   margin-right: 5%;
-  top: 0;
+  margin-top: 20px;
 }
 
 /* Styles for Login Component */
@@ -111,8 +133,13 @@ background-color: skyblue;
   flex-flow: row nowrap;
 }
 
+.loginwelcome{
+  padding:3px;
+}
+
 .loginImage{
-  width: 50%
+  width: 50%;
+margin-top: 7px;
 }
 
 .loginImage img{
@@ -123,7 +150,7 @@ background-color: skyblue;
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  margin-left: 20%;
+  margin-left: 15%;
 }
 
 .loginForm h1{
@@ -141,12 +168,14 @@ background-color: #40826D;
   width: 30%;
   align-self: center;
   font-size: 3vh;
+  margin-left:65px;
   }
 
 .loginForm input{
   width: 40%;
   align-self: center;
   font-size: 3vh;
+  margin-left:10px;
 }
 
 .loginForm label{
@@ -158,7 +187,6 @@ background-color: #40826D;
   color:firebrick;
   font-style: italic;
 }
-
 
 /* Styles for About Component */
 .aboutContainer{
@@ -179,6 +207,7 @@ background-color: #40826D;
 .aboutContent{
   width: 40%;
   text-align: left;
+  margin-right:150px;
 }
 
 .aboutContainer h1{
@@ -188,25 +217,25 @@ background-color: #40826D;
 }
 
 /* Styles for Sign Up Component*/
-
 .signUpFormContainer{
   display: flex;
   flex-flow: row nowrap;
 }
 
 .signUpImage{
-  width: 50%
+  width: 50%;
 }
 
 .signUpImage img{
   width: 90%;
-  height: 90vh
+  height: 75vh
 }
 
 .signUpForm{
   display: flex;
   flex-flow: column nowrap;
   width: 45%;
+  margin-right:150px;
 }
 
 .signUpForm h1{
@@ -214,7 +243,6 @@ background-color: #40826D;
   font-size: 8vh;
   background-color: #40826D;
 }
-
 .signUpForm button{
   width: 30%;
   align-self: center;
@@ -239,7 +267,6 @@ background-color: #40826D;
 }
 
 /* ------Viewport 500px------- */
-
 @media only screen and (max-width:500px) {
   /*NAVBAR*/
   .NAVBAR {
@@ -371,4 +398,11 @@ background-color: #40826D;
     text-align: center;
     font-size: 1.5em;
   }
+}
+
+/*CONTACT*/
+.contactImage{
+  height:300px;
+  margin-bottom:-60px;
+  margin-top:40px;
 }

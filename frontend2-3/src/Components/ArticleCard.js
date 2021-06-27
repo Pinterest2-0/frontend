@@ -1,10 +1,12 @@
 import React from 'react'; 
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components'
-// import {MdEdit} from 'react-icons/md';
-// import {RiArchiveDrawerLine} from 'react-icons/ri';
-// import {TiDelete} from 'react-icons/ti';
-
+import {MdEdit} from 'react-icons/md';
+import {RiArchiveDrawerLine} from 'react-icons/ri';
+import {TiDelete} from 'react-icons/ti';
+import {RiEmotionNormalLine} from 'react-icons/ri'
+import {RiEmotionHappyLine} from 'react-icons/ri'
+import {RiEmotionLine} from 'react-icons/ri'
 
 export const Button = styled.button`
 background: ${props => props.primary ? "skyblue" : "white"};
@@ -18,8 +20,8 @@ border-radius: 3px;
 `
 
 const Card = styled.div`
-margin: 0 auto; 
-
+margin-left: 300px; 
+margin-right: 300px;
 }
 `
 
@@ -30,9 +32,10 @@ margin: 0 auto;
 
 
 const ArticleCard = (props) => {
-const {title, category, link, description} = props.article
+const {title, category, link, description, rank} = props.article
 // const {first_name, last_name, email,avatar} = props.article
-
+const ranking = [ <RiEmotionNormalLine/>, <RiEmotionLine/>, <RiEmotionHappyLine/>  ]
+const rankStatus = [ 'Nice Article', 'Great Read!', 'Absolutely Amazing Article!!' ]
 const {push} = useHistory();
 const handleModal = () => {
 push('/update')
@@ -42,16 +45,17 @@ push('/update')
             
             {/* <img src={avatar} alt="" /> */}
                     <p className='title'>Title: {title}</p>
+                    <p>Rank: {ranking[rank -1]} {rankStatus[rank - 1]} </p>
                     <p>Category: {category}</p>
-                    <a href={link}>Read More</a>
+                    <a  className='READMORE' href={link}>Read More</a>
                     <p>Summary: {description}</p>
                     <div>
-                    <Button className="primarybtn" primary onClick={handleModal}>{/*<MdEdit/>*/} Edit</Button>
-                    <Button className="primarybtn" primary>{/*<RiArchiveDrawerLine/>*/}Archive</Button>
-                    <Button className="primarybtn" primary>{/*<TiDelete/>*/}Delete</Button>
+                    <Button className="primarybtn" primary onClick={handleModal}><MdEdit/> Edit</Button>
+                    <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
+                    <Button className="primarybtn" primary><TiDelete/>Delete</Button>
                     </div>
-                
-        </Card>
+                    
+            </Card>
     )
 }
 
