@@ -301,5 +301,8 @@ top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 background-color: skyblue; 
-z-index: 1000 
+border: 1px solid deepskyblue; 
+border-radius: 30px; 
+z-index: 1000; 
+width: 50%; 
 }

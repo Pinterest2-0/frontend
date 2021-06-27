@@ -46,7 +46,7 @@ const UpdateModal = ({setIsVisible}) => {
         event.preventDefault()
         setIsVisible(false);
     }
-    return(
+    return (
 
         <div>
             <Form {...layout} onSubmit={handleSubmit}>
