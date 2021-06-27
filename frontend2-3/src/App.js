@@ -73,7 +73,7 @@ function App() {
       <PrivateRoute exact path='/userdashboard' component={Dashboard}/>
       < Route exact path='/' component={LandingPage}/>
 
-      <Route exact path='/signup'>
+      <Route path='/signup'>
         <SignUpForm />
       </Route>
 <PrivateRoute exact path='/update/articles/:id' component={UpdateModal}/>   {/*This is very much needed*/}
