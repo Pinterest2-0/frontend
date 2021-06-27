@@ -16,7 +16,10 @@
 .apptitle{
   margin-top:25px;
   margin-left:25px;
-  color:black;
+  margin-right:18px;
+  color:white;
+  font-family: 'Gotham';
+  font-weight: 900;
 }
 /*CATEGORIES*/
 .categories button{
@@ -30,6 +33,7 @@
   background-color: #40826D;
   display:flex;
   padding-top:5px;
+  padding-bottom: 16px;
   padding-bottom: 30px;
 }
 
@@ -38,10 +42,19 @@
   display: block;
   color: black;
   text-align: center;
-  padding: 20px 20px;
-  text-decoration: underline;
-  font-size: 1.5rem;
+  padding: 26px 14px 14px 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'Helvetica Neue';
+  font-weight: bold;
+  
 }
+
+.NAVBAR a:hover {
+  text-decoration: underline;
+  color: lightgray;
+}
+
 
 .NAVBAR input[type=text] {
   float: right;
@@ -214,6 +227,29 @@ background-color: #40826D;
   font-size: 5em;
   text-align: center;
   background-color: #40826D;
+}
+
+/* Styles for LandingPage Component*/
+
+.landingPageImageContainer{
+  width: 60%;
+}
+
+.landingPageImageContainer img{
+  height: 52vh;
+}
+
+.landingContainer h1{
+  font-size: 3em;
+  text-align: center;
+}
+
+.landingContainer p{
+  font-size: 1.2em;
+}
+
+.landingText {
+  width: 40%;
 }
 
 /* Styles for Sign Up Component*/
