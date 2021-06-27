@@ -54,11 +54,6 @@ function App() {
       <Route path='/about'>
         <About />
       </Route>
-      
-<Route path='/contact'>
-  <Contact/>
-</Route>
-
 
       <Route exact path='/login'>
         <LoginForm />
@@ -70,8 +65,11 @@ function App() {
       <Route path='/signup'>
         <SignUpForm />
       </Route>
-<Route exact path='/update' component={UpdateModal}/>   {/*This is very much needed*/}
 
+      <Route exact path='/update' component={UpdateModal}/>   {/*This is very much needed*/}
+
+      <Route exact path='/contact' component={Contact}>
+      </Route>
     </Switch>
     
 
