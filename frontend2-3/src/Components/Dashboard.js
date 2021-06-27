@@ -41,7 +41,7 @@ const handleAdd = () => {
             
             {articles.map((article) => {
                 return(
-                <ArticleCard article={article} key={article.id}/>
+                <ArticleCard article={article} setGlobalArticles={setArticles} key={article.id}/>
                 )
             })}
             </section>

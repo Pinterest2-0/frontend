@@ -5,6 +5,7 @@ import {MdEdit} from 'react-icons/md';
 import {RiArchiveDrawerLine} from 'react-icons/ri';
 import {TiDelete} from 'react-icons/ti';
 import UpdateModal from './UpdateModal';
+import {axiosWithAuth} from '../Utils/AxiosWithAuth';
 
 
 export const Button = styled.button`
@@ -30,17 +31,42 @@ margin-right: 300px;
 // `
 
 
-const ArticleCard = (props) => {
-const {title, category, link, description} = props.article
-// const {first_name, last_name, email,avatar} = props.article
+const ArticleCard = ({article, setGlobalArticles}) => {
+const {title, category, link, description} = article
+const {article_id} = article // This defines the id 
+
+
 
 const {push} = useHistory();
-const {id} = useParams();
 const [isModalVisible, setIsModalVisible] = useState(false);
 
+const [localArticles, setLocalArticles] = useState('');
+
 const handleModal = () => {
+    
 setIsModalVisible(true); 
 }
+
+useEffect(()=>{
+    axiosWithAuth().get(`articles/${article_id}`)
+        .then(res=>{
+            setLocalArticles(res.data);
+        })
+        .catch(err=>{
+            console.log(err.response);
+        })
+}, [article_id]);
+
+// const handleDelete = () => {
+//     axiosWithAuth().delete(`articles/${article_id}`)
+//     .then( res => {
+//         const amendedArticles = article.filter(article => {
+//         return article.article_id !== {article_id}
+//     }), })
+//     .catch()
+    
+   
+// }
     return(
         <>
             <Card className="CardContainer">
@@ -53,12 +79,12 @@ setIsModalVisible(true);
                         <div>
                         <Button className="primarybtn" primary onClick={handleModal}><MdEdit/> Edit</Button>
                         <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
-                        <Button className="primarybtn" primary><TiDelete/>Delete</Button>
+                        <Button className="primarybtn" primary ><TiDelete/>Delete</Button>
                         </div>
                         
                 </Card>
             {isModalVisible ? <div className="UpdateModalContainer">
-                <UpdateModal setIsVisible={setIsModalVisible}/>
+                <UpdateModal setIsVisible={setIsModalVisible} editModal={localArticles}/>
             </div> : null}
             </>
     )

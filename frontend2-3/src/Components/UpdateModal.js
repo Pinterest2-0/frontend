@@ -26,17 +26,17 @@ const layout = {
     },
   };
 
-const UpdateModal = ({setIsVisible}) => {
+const UpdateModal = ({setIsVisible, editModal}) => {
     const { TextArea } = Input;
-
+console.log("Testing for editModal: ",editModal)
     const modalFormat = {
         title: '',
         link:'',
-        summary:''
+        description:''
     }
 
     const [modalContent, setModalContent] = useState(modalFormat)
-    const {title, link, summary} = modalContent
+    const {title, link, description} = modalContent
 
     const handleChange = (event) => {
         setModalContent({...modalContent, [event.target.name]:event.target.value})
@@ -51,28 +51,23 @@ const UpdateModal = ({setIsVisible}) => {
         <div>
             <Form {...layout} onSubmit={handleSubmit}>
                 <h2>Enter Your Changes Below</h2>
-                <Form.Item type="text" 
+                <input type="text" 
                 name='title'
                 label='Title'
-                value={title}
+                value={editModal.title}
                 onChange={handleChange}
-                >
-                    
-                <input />
-                </Form.Item>
+                />
 
-                <Form.Item type="text" 
+                <input type="text" 
                 name='link'
                 label='Link'
-                value={link}
-                onChange={handleChange}>
+                value={editModal.link}
+                onChange={handleChange}/>
 
-                <input />
-                </Form.Item>
                 <TextArea type="text" 
                 name='summary'
                 placeholder='Something short & sweet?'
-                value={summary}
+                value={editModal.description}
                 onChange={handleChange}
                 autoSize={{ minRows: 5, maxRows: 7 }}
                 >

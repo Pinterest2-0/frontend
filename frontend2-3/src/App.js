@@ -76,7 +76,7 @@ function App() {
       <Route exact path='/signup'>
         <SignUpForm />
       </Route>
-<PrivateRoute exact path='/update' component={UpdateModal}/>   {/*This is very much needed*/}
+<PrivateRoute exact path='/update/articles/:id' component={UpdateModal}/>   {/*This is very much needed*/}
 <PrivateRoute exact path='/add' component={CardCreator}/>
 
     </Switch>

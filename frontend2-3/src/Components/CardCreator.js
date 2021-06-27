@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import { axiosWithAuth } from '../Utils/AxiosWithAuth';
+import axios from 'axios';
 
 // Not exported until Component can be used. 
 const CardCreator = () => { 
@@ -11,12 +11,12 @@ const CardCreator = () => {
     title: '',
     category:'',
     link: '',
-    summary:''
+    description:''
     }
 
     const [newCard, setNewCard] = useState(newCardStandard)
 
-const {title, category, link, summary } = newCard
+const {title, category, link, description } = newCard
 
 const handleChange = (event) => {
     setNewCard({...newCard, [event.target.name]:event.target.value})
@@ -24,9 +24,10 @@ const handleChange = (event) => {
 
 const handleSubmit = (event) => {
 event.preventDefault()
-axiosWithAuth().post('articles', newCard) 
+axios.post('https://pintereachunit4.herokuapp.com/api/articles', newCard) 
 .then(res =>{
 console.log("Successful Article Post: ",res)
+console.log(newCard);
 push('/userdashboard')
 })
 .catch(err =>{
@@ -58,9 +59,9 @@ console.log("Article Post went wrong: ", err)
                 onChange={handleChange}/>
                 <br />
                 <textarea type="text" 
-                name='summary'
+                name='description'
                 placeholder='Something short & sweet?'
-                value={summary}
+                value={description}
                 onChange={handleChange}>
                 </textarea>
                 <br />
