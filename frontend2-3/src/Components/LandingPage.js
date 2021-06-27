@@ -39,6 +39,11 @@ const ButtonGroup = styled.div`
         justify-content: center;
         padding-left: 150px;
         padding-right: 150px;
+        
+        @media screen and (max-width: 768px) {
+            padding: 50px;
+            flex-flow: column nowrap;
+        }
     `
     return (
         <div className='landingContainer'>
