@@ -102,9 +102,10 @@ background-color: #bcbcbecc;
 }
 
 #dashboardTitle{ 
-  text-align: middle; 
+  text-align: center; 
   border-bottom: 1px solid black; 
   padding-bottom: 15px; 
+  display: inline-block; 
 }
 
 .dashLink{

@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import ArticleCard from './ArticleCard'; 
 import axios from 'axios'
 import CategoryList from './CategoryList'
-// import styled from 'styled-components';
+import {IoMdAddCircle} from 'react-icons/io'
+
 
 
 
@@ -13,11 +14,10 @@ const Dashboard = () => {
 const articleStore = []
 
 const [articles, setArticles] = useState(articleStore)
-// 'https://reqres.in/api/users'
+
 useEffect(() => { 
     axios.get('https://pintereachunit4.herokuapp.com/api/articles')
     .then(res => {
-    // setArticles(res.data.data)
     setArticles(res.data)
 })
     .catch(err => {console.log(err)})
@@ -27,6 +27,8 @@ useEffect(() => {
     return(
         <div class="Dashboard" >
             <h1 id='dashboardTitle'>My Articles</h1>
+
+            
             <CategoryList/>
             <section class="CardDashboard">
 

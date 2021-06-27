@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import LoginForm from './Components/LoginForm';
 import SignUpForm from './Components/SignUpForm';
@@ -16,13 +16,20 @@ import {Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
 import Contact from './Components/Contact';
+import CardCreator from './Components/CardCreator'; 
 
 function App() {
   
 
   const [theme, themeToggler] = useDarkMode();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    window.location.href='/login';
+  }
 
   return (
     <ThemeProvider theme={themeMode}>
@@ -44,7 +51,9 @@ function App() {
           {/*STEPH */}
           <Link to='/login'>Log In</Link>
           <Link to='/signup'>Sign Up</Link>   
+          {isLoggedIn ? <Link onClick={handleLogout}>Log Out</Link>: null}
           <Toggle theme={theme} toggleTheme={themeToggler} />
+          
       </nav>
       <br/>
 
@@ -61,7 +70,7 @@ function App() {
 
 
       <Route exact path='/login'>
-        <LoginForm />
+        <LoginForm setIsLoggedIn = {setIsLoggedIn}/>
       </Route>
         
       <Route exact path='/userdashboard' component={Dashboard}/>
@@ -71,6 +80,7 @@ function App() {
         <SignUpForm />
       </Route>
 <Route exact path='/update' component={UpdateModal}/>   {/*This is very much needed*/}
+<Route exact path='/add' component={CardCreator}/>
 
     </Switch>
     

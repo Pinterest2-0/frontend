@@ -18,7 +18,7 @@ const loginFormErrors = {
 }
 
 
-export default function LoginForm() {
+export default function LoginForm({setIsLoggedIn}) {
 
 const {push} = useHistory()
 
@@ -34,6 +34,7 @@ const {push} = useHistory()
             .then(response => {
                 localStorage.setItem('token', response.data.token)
                 setCurrentMember([...currentMember,response]);
+                setIsLoggedIn(true); 
                 push('/userdashboard')
             })
             .catch(error => {

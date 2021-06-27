@@ -1,6 +1,6 @@
-import axios from 'axios';
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import { axiosWithAuth } from '../Utils/AxiosWithAuth';
 
 // Not exported until Component can be used. 
 const CardCreator = () => { 
@@ -23,14 +23,14 @@ const handleChange = (event) => {
 
 const handleSubmit = (event) => {
 event.preventDefault()
-// axios.post('', null) Commenting out until endpoint is created for article database. 
-// .then(res =>{
-// console.log("Successful Article Post: ",res)
-// })
-// .catch(err =>{
-// console.log("Article Post went wrong: ", err)
-// })
-push('/')
+axiosWithAuth().post('articles', newCard) 
+.then(res =>{
+console.log("Successful Article Post: ",res)
+push('/userdashboard')
+})
+.catch(err =>{
+console.log("Article Post went wrong: ", err)
+})
 }
     return(
         <div>
@@ -62,3 +62,5 @@ push('/')
         </div>
     )
 }
+
+export default CardCreator 
