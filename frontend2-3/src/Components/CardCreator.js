@@ -9,13 +9,14 @@ const CardCreator = () => {
 
     const newCardStandard= {
     title: '',
+    category:'',
     link: '',
     summary:''
     }
 
     const [newCard, setNewCard] = useState(newCardStandard)
 
-const {title, link, summary } = newCard
+const {title, category, link, summary } = newCard
 
 const handleChange = (event) => {
     setNewCard({...newCard, [event.target.name]:event.target.value})
@@ -40,6 +41,13 @@ console.log("Article Post went wrong: ", err)
                 name='title'
                 placeholder='title'
                 value={title}
+                onChange={handleChange}
+                />
+                <br />
+                <input type="text" 
+                name='category'
+                placeholder='category'
+                value={category}
                 onChange={handleChange}
                 />
                 <br />
