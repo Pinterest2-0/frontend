@@ -35,7 +35,7 @@ function App() {
           <input type="text" placeholder="Search.."/>
           
           {/*Links */} 
-          <Link className="active" to="/home">Home</Link>
+          <Link className="active" to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
           <Link to='/login'>Log In</Link>
@@ -62,10 +62,6 @@ function App() {
       </Route>
 
       <Route exact path='/contact' component={Contact}>
-      </Route>
-
-      <Route exact path='/home'>
-        <Home />
       </Route>
 
        {/* <Route exact path='/update' component={UpdateModal}> */}

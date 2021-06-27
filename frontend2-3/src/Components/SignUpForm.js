@@ -8,8 +8,7 @@ const initialSignUpForm = {
     lastname: '',
     username: '',
     password: '',
-    passwordconfirm: '',
-    terms: false,
+
 }
 
 // SIGN UP FORM ERRORS
@@ -18,8 +17,7 @@ const signUpFormErrors = {
     lastname: '',
     username: '',
     password: '',
-    passwordconfirm: '',
-    terms: '',
+
 }
 
 export default function SignUpForm() {
@@ -72,8 +70,6 @@ export default function SignUpForm() {
             lastname: signUp.lastname,
             username: signUp.username,
             password: signUp.password,
-            passwordconfirm: signUp.passwordconfirm,
-            terms: signUp.terms,
         }
         postNewMember(newMem)
     }
@@ -104,8 +100,6 @@ export default function SignUpForm() {
                     <div>{signUpErrors.lastname}</div>
                     <div>{signUpErrors.username}</div>
                     <div>{signUpErrors.password}</div>
-                    <div>{signUpErrors.passwordconfirm}</div>
-                    <div>{signUpErrors.terms}</div>
                 </div>
 
                 <label>
@@ -125,17 +119,6 @@ export default function SignUpForm() {
 
                 <label>
                     <input name='password' type='password' value={signUp.password} placeholder='Create your password' onChange={changes}/>
-                </label>
-                <br/>
-
-                <label>
-                    <input name='passwordconfirm' type='password' value={signUp.passwordconfirm} placeholder='Confirm your password' onChange={changes}/>
-                </label>
-                <br/>
-
-                <label>
-                    I accept the Terms of Use and Privacy Policy.
-                    <input name='terms' type='checkbox' onChange={changes}/>
                 </label>
                 <br/>
 

@@ -13,11 +13,6 @@
   }
 }
 
-/* cat image*/
-.App img{padding-top: 15px
-}
-
-
 .NAVBAR {
   background-color: #40826D;
   display:flex;
@@ -176,12 +171,13 @@ background-color: #40826D;
 }
 
 .aboutImageContainer img{
-  height: 90vh;
+  width: 45vw;
+  height: auto;
   margin-top: 8%;
 }
 
 .aboutContent{
-  width: 45%;
+  width: 40%;
   text-align: left;
 }
 
@@ -240,4 +236,139 @@ background-color: #40826D;
 .signUpErrors{
   color:firebrick;
   font-style: italic;
+}
+
+/* ------Viewport 500px------- */
+
+@media only screen and (max-width:500px) {
+  /*NAVBAR*/
+  .NAVBAR {
+    flex-flow: row wrap;
+  }
+
+  .NAVBAR a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: underline;
+    font-size: 1.5rem;
+  }
+  /*LOGIN*/
+  .loginComponent{
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .loginImage{
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+  }
+  
+  .loginImage img{
+    width: 100%;
+  }
+  
+  .loginForm{
+    width: 70%;
+    margin-left: 15%;
+    
+  }
+  
+  .loginForm h1{
+  font-size: 3em;
+  }
+  
+  .loginForm h2{
+    font-size: 2em;
+  }
+  
+  .loginForm button{
+    font-size: 1em;
+    width:fit-content;
+    }
+  
+  .loginForm input{
+    font-size: 1em;
+    width: 40%
+  }
+  
+  .loginForm label{
+    font-size: 1.5em;
+  }
+
+  /*ABOUT*/
+  .aboutContainer{
+    flex-flow: column nowrap;
+  }
+  
+  .aboutImageContainer{
+    width: 90%;
+    margin-left: 7%;
+  }
+  
+  .aboutImageContainer img{
+    height: auto;
+  }
+  
+  .aboutContent{
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+  }
+  
+  .aboutContainer h1{
+    font-size: 3em;
+    text-align: center;
+    background-color: #40826D;
+  }
+
+  /*SIGN UP*/
+  .signUpFormContainer{
+    flex-flow: column nowrap;
+  }
+  
+  .signUpImage{
+    width: 60%;
+    margin-left:20%
+  }
+  
+  .signUpImage img{
+    width: 100%;
+    height: auto;
+  }
+  
+  .signUpForm{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 80%;
+    margin-left: 10%;
+  }
+  
+  .signUpForm h1{
+    text-align: center;
+    font-size: 3em;
+    background-color: #40826D;
+  }
+  
+  .signUpForm button{
+    width: 30%;
+    align-self: center;
+    font-size: 1.5em;
+    margin-bottom: 5%;
+    }
+  
+  .signUpForm input{
+    width: 70%;
+    align-self: center;
+    font-size: 1em;
+    margin: 1%;
+  }
+  
+  .signUpForm label{
+    text-align: center;
+    font-size: 1.5em;
+  }
 }

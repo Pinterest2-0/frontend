@@ -27,7 +27,8 @@ export default function LoginForm() {
             axios
             .post('https://pintereachunit4.herokuapp.com/api/auth/login', member)
             .then(response => {
-                setCurrentMember([...currentMember, member]);
+                console.log(response)
+                setCurrentMember([...currentMember, response]);
             })
             .catch(error => {
                 console.log('Error posting data: ', error)
@@ -75,6 +76,7 @@ export default function LoginForm() {
             <div class="vl"></div>
 
             <div className='loginFormContainer'>
+                
                 <form onSubmit={submit} className='loginForm'>
                     <h1> Welcome Back! </h1>
                     <h2> Member Log In</h2>
