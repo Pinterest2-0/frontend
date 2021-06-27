@@ -26,26 +26,38 @@ const layout = {
     },
   };
 
-const UpdateModal = () => {
+const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles}) => {
     const { TextArea } = Input;
-    const {push} = useHistory()
 
-    const modalFormat = {
-        title: '',
-        link:'',
-        summary:''
-    }
+    // const modalFormat = {
+    //     title: '',
+    //     link:'',
+    //     summary:''
+    // }
 
     const [modalContent, setModalContent] = useState(modalFormat)
-    const {title, link, summary} = modalContent
+    const {title, link, description} = editModal
 
     const handleChange = (event) => {
-        setModalContent({...modalContent, [event.target.name]:event.target.value})
+        setEditModal({...editModal, [event.target.name]:event.target.value})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        push('/userdashboard')
+
+        axiosWithAuth().put(`/articles/${editModal.article_id}`, editModal)
+        .then(res => {
+            console.log(res)
+            setIsVisible(false);
+        })
+        .catch(err => {
+            console.log("handleSubmit:UpdateModal:Not working: ", err)
+            setIsVisible(false);
+        })
+    }
+
+    const handleExit= () => {
+        setIsVisible(false);
     }
     return(
 
@@ -72,13 +84,14 @@ const UpdateModal = () => {
                 <TextArea type="text" 
                 name='summary'
                 placeholder='Something short & sweet?'
-                value={summary}
+                value={description}
                 onChange={handleChange}
                 autoSize={{ minRows: 5, maxRows: 7 }}
                 >
                 </TextArea>
                 <br />
                 <Button onClick={handleSubmit} primary><VscSave/> &nbsp; Save Changes</Button>
+                <Button onClick={handleExit} primary > Nevermind!</Button>
         </Form>
 
         </Container>
