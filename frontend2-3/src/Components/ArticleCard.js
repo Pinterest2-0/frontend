@@ -35,7 +35,7 @@ margin-right: 300px;
 
 
 const ArticleCard = ({article, setGlobalArticles}) => {
-    const {title, category, link, description} = article
+    const {title, category, link, description, rank} = article
     const {article_id} = article // This defines the id 
     
 const ranking = [ <RiEmotionNormalLine/>, <RiEmotionLine/>, <RiEmotionHappyLine/>  ]
@@ -91,6 +91,7 @@ alert('Feature Coming Soon!')
             
             {/* <img src={avatar} alt="" /> */}
                     <p className='title'>Title: {title}</p>
+                    <p>Rank: {ranking[rank -1]} {rankStatus[rank - 1]} </p>
                     <p>Category: {category}</p>
                     <a  className='READMORE' href={link}>Read More</a>
                     <p>Summary: {description}</p>
