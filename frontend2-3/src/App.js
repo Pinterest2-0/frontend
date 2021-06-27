@@ -11,7 +11,7 @@ import { GlobalStyles } from "./Components/GlobalStyles";
 import { lightTheme, darkTheme } from "./Components/Themes"
 import  {useDarkMode} from "./Hooks/useDarkMode";
 import Toggle from './Components/Toggler'; 
-
+import UpdateModal from './Components/UpdateModal';  // This is needed. 
 import {Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
 import Dashboard from './Components/Dashboard'; 
@@ -54,11 +54,6 @@ function App() {
       <Route path='/about'>
         <About />
       </Route>
-      
-<Route path='/contact'>
-  <Contact/>
-</Route>
-
 
       <Route exact path='/login'>
         <LoginForm />
@@ -67,10 +62,14 @@ function App() {
       <Route exact path='/userdashboard' component={Dashboard}/>
       < Route exact path='/' component={LandingPage}/>
 
-      <Route exact path='/signup'>
+      <Route path='/signup'>
         <SignUpForm />
       </Route>
 
+      <Route exact path='/update' component={UpdateModal}/>   {/*This is very much needed*/}
+
+      <Route exact path='/contact' component={Contact}>
+      </Route>
     </Switch>
     
 
