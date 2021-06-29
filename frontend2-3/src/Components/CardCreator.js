@@ -11,7 +11,7 @@ const CardCreator = () => {
     title: '',
     category:'',
     link: '',
-    summary:''
+    description:''
     }
 
     const [newCard, setNewCard] = useState(newCardStandard)

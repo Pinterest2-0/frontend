@@ -36,7 +36,7 @@ const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles})
     // }
 
 
-    const {title, link, description} = editModal
+    const {title, category, link, description} = editModal
 
     const handleChange = (event) => {
         setEditModal({...editModal, [event.target.name]:event.target.value})
@@ -77,8 +77,14 @@ const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles})
                 value={link}
                 onChange={handleChange}/>
 
+            <input type="text" 
+                name='category'
+                label='category'
+                value={category}
+                onChange={handleChange}/>
+
                 <TextArea type="text" 
-                name='summary'
+                name='description'
                 placeholder='Something short & sweet?'
                 value={description}
                 onChange={handleChange}
