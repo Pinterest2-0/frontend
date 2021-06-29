@@ -18,7 +18,7 @@ const loginFormErrors = {
 }
 
 
-export default function LoginForm() {
+export default function LoginForm({setIsLoggedIn}) {
 
 const {push} = useHistory()
 
@@ -66,6 +66,7 @@ const {push} = useHistory()
     // SUBMIT HANDLER
     const submit = event => {
         event.preventDefault()
+        setIsLoggedIn(true)
         const curMem = {
             username: login.username,
             password: login.password,

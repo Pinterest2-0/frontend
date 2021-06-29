@@ -1,22 +1,22 @@
-import React, {useState} from 'react'
-import { useHistory} from 'react-router-dom';
+import React from 'react'
 import {Button} from './ArticleCard';
 import {VscSave} from 'react-icons/vsc';
-import styled from 'styled-components';
+
 import { Input, Form } from 'antd';
+import {axiosWithAuth} from '../Utils/AxiosWithAuth';
 
+// const Container = styled.div`
 
-const Container = styled.div`
+// position: fixed;
+// left: 50%;
+// transform: translate(-50%, 0);
+// width: 70%; 
+// padding: 4rem; 
+// border: 2px solid black; 
+// border-radius: 30px;
+// z-index: 1000;  
+// `
 
-position: fixed;
-left: 50%;
-transform: translate(-50%, 0);
-width: 70%; 
-padding: 4rem; 
-border: 2px solid black; 
-border-radius: 30px;
-z-index: 1000;  
-`
 const layout = {
     labelCol: {
       span: 8,
@@ -26,62 +26,77 @@ const layout = {
     },
   };
 
-const UpdateModal = () => {
+const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles}) => {
     const { TextArea } = Input;
-    const {push} = useHistory()
 
-    const modalFormat = {
-        title: '',
-        link:'',
-        summary:''
-    }
+    // const modalFormat = {
+    //     title: '',
+    //     link:'',
+    //     summary:''
+    // }
 
-    const [modalContent, setModalContent] = useState(modalFormat)
-    const {title, link, summary} = modalContent
+
+    const {title, category, link, description} = editModal
 
     const handleChange = (event) => {
-        setModalContent({...modalContent, [event.target.name]:event.target.value})
+        setEditModal({...editModal, [event.target.name]:event.target.value})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        push('/userdashboard')
+
+        axiosWithAuth().put(`/articles/${editModal.article_id}`, editModal)
+        .then(res => {
+            console.log(res)
+            setIsVisible(false);
+        })
+        .catch(err => {
+            console.log("handleSubmit:UpdateModal:Not working: ", err)
+            setIsVisible(false);
+        })
+    }
+
+    const handleExit= () => {
+        setIsVisible(false);
     }
     return(
 
-        <Container>
+        <div>
             <Form {...layout} onSubmit={handleSubmit}>
                 <h2>Enter Your Changes Below</h2>
-                <Form.Item type="text" 
+                <input type="text" 
                 name='title'
                 label='Title'
                 value={title}
                 onChange={handleChange}
-                >
-                <input />
-                </Form.Item>
+                />
 
-                <Form.Item type="text" 
+                <input type="text" 
                 name='link'
                 label='Link'
                 value={link}
-                onChange={handleChange}>
+                onChange={handleChange}/>
 
-                <input />
-                </Form.Item>
+            <input type="text" 
+                name='category'
+                label='category'
+                value={category}
+                onChange={handleChange}/>
+
                 <TextArea type="text" 
-                name='summary'
+                name='description'
                 placeholder='Something short & sweet?'
-                value={summary}
+                value={description}
                 onChange={handleChange}
                 autoSize={{ minRows: 5, maxRows: 7 }}
                 >
                 </TextArea>
                 <br />
                 <Button onClick={handleSubmit} primary><VscSave/> &nbsp; Save Changes</Button>
+                <Button onClick={handleExit} primary > Nevermind!</Button>
         </Form>
 
-        </Container>
+        </div>
     )
 }
 export default UpdateModal 

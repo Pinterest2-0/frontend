@@ -9,29 +9,32 @@ const CardCreator = () => {
 
     const newCardStandard= {
     title: '',
+    category:'',
     link: '',
-    summary:''
+    description:''
     }
 
     const [newCard, setNewCard] = useState(newCardStandard)
 
-const {title, link, summary } = newCard
+const {title, category, link, description } = newCard
 
 const handleChange = (event) => {
     setNewCard({...newCard, [event.target.name]:event.target.value})
 }
 
 const handleSubmit = (event) => {
-event.preventDefault()
-// axios.post('', null) Commenting out until endpoint is created for article database. 
-// .then(res =>{
-// console.log("Successful Article Post: ",res)
-// })
-// .catch(err =>{
-// console.log("Article Post went wrong: ", err)
-// })
-push('/')
-}
+    event.preventDefault()
+    axios.post('https://pintereachunit4.herokuapp.com/api/articles', newCard) 
+    .then(res =>{
+    console.log("Successful Article Post: ",res)
+    console.log(newCard);
+    push('/userdashboard')
+    })
+    .catch(err =>{
+    console.log("Article Post went wrong: ", err)
+    })
+    }
+    
     return(
         <div>
             <form onSubmit={handleSubmit}>
@@ -44,15 +47,22 @@ push('/')
                 />
                 <br />
                 <input type="text" 
+                name='category'
+                placeholder='category'
+                value={category}
+                onChange={handleChange}
+                />
+                <br />
+                <input type="text" 
                 name='link'
                 placeholder='link'
                 value={link}
                 onChange={handleChange}/>
                 <br />
                 <textarea type="text" 
-                name='summary'
+                name='description'
                 placeholder='Something short & sweet?'
-                value={summary}
+                value={description}
                 onChange={handleChange}>
                 </textarea>
                 <br />
@@ -62,3 +72,5 @@ push('/')
         </div>
     )
 }
+
+export default CardCreator
