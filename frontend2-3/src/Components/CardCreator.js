@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import {Button} from './ArticleCard';
 
 // Not exported until Component can be used. 
 const CardCreator = () => { 
@@ -38,7 +39,7 @@ const handleSubmit = (event) => {
     return(
         <div>
             <form onSubmit={handleSubmit}>
-            <div>
+            <div className="ModalContainer">
                 <input type="text" 
                 name='title'
                 placeholder='title'
@@ -66,7 +67,7 @@ const handleSubmit = (event) => {
                 onChange={handleChange}>
                 </textarea>
                 <br />
-                <button>Submit!</button>
+                <Button primary >Submit!</Button>
             </div>
         </form>
         </div>

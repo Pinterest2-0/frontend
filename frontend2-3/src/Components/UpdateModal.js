@@ -64,6 +64,7 @@ const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles})
         <div>
             <Form {...layout} onSubmit={handleSubmit}>
                 <h2>Enter Your Changes Below</h2>
+                    <div className="edit-container">
                 <input type="text" 
                 name='title'
                 label='Title'
@@ -91,6 +92,8 @@ const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles})
                 autoSize={{ minRows: 5, maxRows: 7 }}
                 >
                 </TextArea>
+                    </div>
+                
                 <br />
                 <Button onClick={handleSubmit} primary><VscSave/> &nbsp; Save Changes</Button>
                 <Button onClick={handleExit} primary > Nevermind!</Button>
