@@ -33,7 +33,7 @@ const Contact = () => {
               <img className='contactImage'src='https://media.istockphoto.com/photos/phone-and-email-icons-on-wooden-cubes-with-contact-us-text-on-blue-picture-id1271752802?b=1&k=6&m=1271752802&s=170667a&w=0&h=-KKfo7gAMrKoH7QUvPGiBA4h1OfcEGhHpcEH7DTzP7U='alt=''></img>
 
                 <TextDiv>
-                    <h3 className='title'>Pintereach</h3>
+                    <h3 className='title'>PinteReach</h3>
                     <p className='text'>
                         1234 Fantasy Ln<br/>
                         Ba Sing Se, CA 10001

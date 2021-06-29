@@ -8,8 +8,7 @@ const initialSignUpForm = {
     lastname: '',
     username: '',
     password: '',
-    passwordconfirm: '',
-    terms: false,
+
 }
 
 // SIGN UP FORM ERRORS
@@ -17,7 +16,7 @@ const signUpFormErrors = {
     firstname: '',
     lastname: '',
     username: '',
-    password: ''
+    password: '',
 }
 
 export default function SignUpForm() {

@@ -60,11 +60,6 @@ function App() {
       <Route path='/about'>
         <About />
       </Route>
-      
-<Route path='/contact'>
-  <Contact/>
-</Route>
-
 
       <Route exact path='/login'>
         <LoginForm setIsLoggedIn = {setIsLoggedIn}/>
@@ -76,8 +71,11 @@ function App() {
       <Route path='/signup'>
         <SignUpForm />
       </Route>
-<PrivateRoute exact path='/update/articles/:id' component={UpdateModal}/>   {/*This is very much needed*/}
-<PrivateRoute exact path='/add' component={CardCreator}/>
+
+      <PrivateRoute exact path='/update/articles/:id' component={UpdateModal}/>   {/*This is very much needed*/}
+      <PrivateRoute exact path='/add' component={CardCreator}/>
+      <Route exact path='/contact' component={Contact}>
+      </Route>
     </Switch>
     
 
