@@ -1,22 +1,22 @@
-import React, {useState} from 'react'
-import { useHistory} from 'react-router-dom';
+import React from 'react'
 import {Button} from './ArticleCard';
 import {VscSave} from 'react-icons/vsc';
-import styled from 'styled-components';
+
 import { Input, Form } from 'antd';
+import {axiosWithAuth} from '../Utils/AxiosWithAuth';
 
+// const Container = styled.div`
 
-const Container = styled.div`
+// position: fixed;
+// left: 50%;
+// transform: translate(-50%, 0);
+// width: 70%; 
+// padding: 4rem; 
+// border: 2px solid black; 
+// border-radius: 30px;
+// z-index: 1000;  
+// `
 
-position: fixed;
-left: 50%;
-transform: translate(-50%, 0);
-width: 70%; 
-padding: 4rem; 
-border: 2px solid black; 
-border-radius: 30px;
-z-index: 1000;  
-`
 const layout = {
     labelCol: {
       span: 8,
@@ -35,7 +35,7 @@ const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles})
     //     summary:''
     // }
 
-    const [modalContent, setModalContent] = useState(modalFormat)
+
     const {title, link, description} = editModal
 
     const handleChange = (event) => {
@@ -61,26 +61,22 @@ const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles})
     }
     return(
 
-        <Container>
+        <div>
             <Form {...layout} onSubmit={handleSubmit}>
                 <h2>Enter Your Changes Below</h2>
-                <Form.Item type="text" 
+                <input type="text" 
                 name='title'
                 label='Title'
                 value={title}
                 onChange={handleChange}
-                >
-                <input />
-                </Form.Item>
+                />
 
-                <Form.Item type="text" 
+                <input type="text" 
                 name='link'
                 label='Link'
                 value={link}
-                onChange={handleChange}>
+                onChange={handleChange}/>
 
-                <input />
-                </Form.Item>
                 <TextArea type="text" 
                 name='summary'
                 placeholder='Something short & sweet?'
@@ -94,7 +90,7 @@ const UpdateModal = ({setIsVisible, editModal, setEditModal, setGlobalArticles})
                 <Button onClick={handleExit} primary > Nevermind!</Button>
         </Form>
 
-        </Container>
+        </div>
     )
 }
 export default UpdateModal 

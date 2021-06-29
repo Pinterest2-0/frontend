@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'; 
-import {useHistory} from 'react-router-dom';
 import styled from 'styled-components'
 import {MdEdit} from 'react-icons/md';
 import {RiArchiveDrawerLine} from 'react-icons/ri';
@@ -34,7 +33,7 @@ margin-right: 300px;
 // `
 
 
-const ArticleCard = (props) => {
+const ArticleCard = ({article, setGlobalArticles}) => {
 const {title, category, link, description, rank} = article
 const {article_id} = article // This defines the id 
 const ranking = [ <RiEmotionNormalLine/>, <RiEmotionLine/>, <RiEmotionHappyLine/>  ]
@@ -69,10 +68,8 @@ const handleDelete = () => {
     .then( res => {
         console.log(res)
         deleteArticles(article_id)
-        alert('article deleted!')
          })
     .catch(err => {
-        console.log('Not Working: ', err)
     })
 
 }
@@ -92,8 +89,8 @@ const handleFeature = () => {
                         <p>Summary: {description}</p>
                         <div>
                         <Button className="primarybtn" primary onClick={handleModal}><MdEdit/> Edit</Button>
-                        <Button className="primarybtn" primary><RiArchiveDrawerLine/>Archive</Button>
-                        <Button className="primarybtn" primary><TiDelete/>Delete</Button>
+                        <Button className="primarybtn" primary onClick={handleFeature}><RiArchiveDrawerLine/>Archive</Button>
+                        <Button className="primarybtn" primary onClick={handleDelete}><TiDelete/>Delete</Button>
                         </div>
                         
                 </Card>
